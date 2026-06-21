@@ -1,0 +1,48 @@
+# Failover chains per router tier. The gateway walks each chain in order,
+# skipping providers with no configured credentials (e.g. Groq/Gemini in
+# LOCAL mode) and providers whose circuit breaker is open. The mock
+# provider is always last -- the guaranteed-available safety net.
+
+chains:
+  small:
+    - provider: groq
+      model: llama-3.1-8b-instant
+    - provider: mock
+      model: mock-small
+
+  mid:
+    - provider: gemini
+      model: gemini-2.0-flash
+    - provider: groq
+      model: llama-3.1-8b-instant
+    - provider: mock
+      model: mock-mid
+
+  large:
+    - provider: groq
+      model: llama-3.3-70b-versatile
+    - provider: mock
+      model: mock-large
+
+retry:
+  max_attempts_per_provider: 2
+  backoff_base_ms: 200
+  backoff_max_ms: 2000
+
+timeouts:
+  groq_s: 20
+  gemini_s: 20
+  mock_s: 5
+
+# Count-based sliding window (last N requests to this provider, not a
+# time window -- see gateway/providers/breaker.py docstring for why).
+circuit_breaker:
+  failure_rate_threshold: 0.5
+  window_size: 8
+  open_seconds: 15
+
+# Streaming mid-death policy: if a stream dies before this many tokens
+# were buffered/emitted, retry silently on the next provider in the
+# chain (the client never sees it). Past this point we can't un-send a
+# partial answer, so we surface a graceful mid-stream error instead.
+stream_fallback_token_threshold: 8
