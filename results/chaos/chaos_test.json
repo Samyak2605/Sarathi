@@ -1,0 +1,142 @@
+{
+  "provider": "mock",
+  "caveat": "provider=mock: SARATHI_DEMO_MODE registers a second mock-backed adapter under the 'groq' slot (no real Groq credentials involved) so a real two-provider failover chain is exercisable with zero credentials. The failover/breaker/retry machinery being tested is the real production code path.",
+  "methodology": "20 concurrent workers hit /v1/chat/completions continuously for 31s. After 3s warmup, the primary provider was killed via POST /admin/chaos for 10s, then revived, with 18s observed afterward for breaker recovery.",
+  "total_requests": 7295,
+  "failed_requests": 0,
+  "availability_pct": 100.0,
+  "requests_during_outage": 2316,
+  "failed_during_outage": 0,
+  "zero_dropped_requests_during_outage": true,
+  "requests_that_failed_over": 3588,
+  "avg_latency_ms": 34.65312394900618,
+  "avg_latency_ms_during_outage": 35.749259935882456,
+  "breaker_timeline": [
+    {
+      "ts": -2.987802028656006,
+      "groq_state": "closed"
+    },
+    {
+      "ts": -1.985257863998413,
+      "groq_state": "closed"
+    },
+    {
+      "ts": -0.9833550453186035,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 0.01822185516357422,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 1.0196149349212646,
+      "groq_state": "open"
+    },
+    {
+      "ts": 2.0208818912506104,
+      "groq_state": "open"
+    },
+    {
+      "ts": 3.0301430225372314,
+      "groq_state": "open"
+    },
+    {
+      "ts": 4.031518936157227,
+      "groq_state": "open"
+    },
+    {
+      "ts": 5.033816814422607,
+      "groq_state": "open"
+    },
+    {
+      "ts": 6.035336017608643,
+      "groq_state": "open"
+    },
+    {
+      "ts": 7.037165880203247,
+      "groq_state": "open"
+    },
+    {
+      "ts": 8.038402080535889,
+      "groq_state": "open"
+    },
+    {
+      "ts": 9.041297912597656,
+      "groq_state": "open"
+    },
+    {
+      "ts": 10.042919874191284,
+      "groq_state": "open"
+    },
+    {
+      "ts": 11.044193029403687,
+      "groq_state": "open"
+    },
+    {
+      "ts": 12.055203914642334,
+      "groq_state": "open"
+    },
+    {
+      "ts": 13.05689811706543,
+      "groq_state": "open"
+    },
+    {
+      "ts": 14.05803918838501,
+      "groq_state": "open"
+    },
+    {
+      "ts": 15.059203863143921,
+      "groq_state": "open"
+    },
+    {
+      "ts": 16.06035304069519,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 17.06156301498413,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 18.064077854156494,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 19.06715703010559,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 20.06879186630249,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 21.070250034332275,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 22.07137703895569,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 23.077290058135986,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 24.080449104309082,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 25.082215070724487,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 26.085474967956543,
+      "groq_state": "closed"
+    },
+    {
+      "ts": 27.086951971054077,
+      "groq_state": "closed"
+    }
+  ],
+  "kill_ts_offset_s": 0,
+  "revive_ts_offset_s": 10.003283023834229
+}

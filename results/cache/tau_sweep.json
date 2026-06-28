@@ -1,0 +1,467 @@
+{
+  "provider": "mock",
+  "caveat": "provider=mock: fresh and cached answers can be textually identical when word counts match (the mock provider only echoes word count), which understates the false-hit rate a real model would show. The structural (embedding-similarity) sweep above is provider-independent and is the primary evidence here; the LLM-judged false-hit numbers are indicative only until run against LIVE models.",
+  "operating_tau": 0.9,
+  "operating_point_structural": {
+    "tau": 0.9,
+    "hit_rate": 1.0,
+    "false_hit_rate": 0.04,
+    "entity_false_hit_rate": 0.075
+  },
+  "structural_sweep": {
+    "embedding_degraded_fallback": false,
+    "near_duplicate_count": 100,
+    "confusable_count": 50,
+    "entity_confusable_count": 40,
+    "sweep": [
+      {
+        "tau": 0.6,
+        "hit_rate": 1.0,
+        "false_hit_rate": 1.0,
+        "entity_false_hit_rate": 1.0
+      },
+      {
+        "tau": 0.62,
+        "hit_rate": 1.0,
+        "false_hit_rate": 1.0,
+        "entity_false_hit_rate": 0.975
+      },
+      {
+        "tau": 0.64,
+        "hit_rate": 1.0,
+        "false_hit_rate": 1.0,
+        "entity_false_hit_rate": 0.975
+      },
+      {
+        "tau": 0.66,
+        "hit_rate": 1.0,
+        "false_hit_rate": 1.0,
+        "entity_false_hit_rate": 0.925
+      },
+      {
+        "tau": 0.68,
+        "hit_rate": 1.0,
+        "false_hit_rate": 1.0,
+        "entity_false_hit_rate": 0.825
+      },
+      {
+        "tau": 0.7,
+        "hit_rate": 1.0,
+        "false_hit_rate": 1.0,
+        "entity_false_hit_rate": 0.75
+      },
+      {
+        "tau": 0.72,
+        "hit_rate": 1.0,
+        "false_hit_rate": 0.98,
+        "entity_false_hit_rate": 0.65
+      },
+      {
+        "tau": 0.74,
+        "hit_rate": 1.0,
+        "false_hit_rate": 0.76,
+        "entity_false_hit_rate": 0.575
+      },
+      {
+        "tau": 0.76,
+        "hit_rate": 1.0,
+        "false_hit_rate": 0.62,
+        "entity_false_hit_rate": 0.45
+      },
+      {
+        "tau": 0.78,
+        "hit_rate": 1.0,
+        "false_hit_rate": 0.6,
+        "entity_false_hit_rate": 0.35
+      },
+      {
+        "tau": 0.8,
+        "hit_rate": 1.0,
+        "false_hit_rate": 0.54,
+        "entity_false_hit_rate": 0.275
+      },
+      {
+        "tau": 0.82,
+        "hit_rate": 1.0,
+        "false_hit_rate": 0.44,
+        "entity_false_hit_rate": 0.25
+      },
+      {
+        "tau": 0.84,
+        "hit_rate": 1.0,
+        "false_hit_rate": 0.36,
+        "entity_false_hit_rate": 0.25
+      },
+      {
+        "tau": 0.86,
+        "hit_rate": 1.0,
+        "false_hit_rate": 0.24,
+        "entity_false_hit_rate": 0.225
+      },
+      {
+        "tau": 0.88,
+        "hit_rate": 1.0,
+        "false_hit_rate": 0.1,
+        "entity_false_hit_rate": 0.15
+      },
+      {
+        "tau": 0.9,
+        "hit_rate": 1.0,
+        "false_hit_rate": 0.04,
+        "entity_false_hit_rate": 0.075
+      },
+      {
+        "tau": 0.92,
+        "hit_rate": 0.9,
+        "false_hit_rate": 0.04,
+        "entity_false_hit_rate": 0.025
+      },
+      {
+        "tau": 0.94,
+        "hit_rate": 0.63,
+        "false_hit_rate": 0.02,
+        "entity_false_hit_rate": 0.0
+      },
+      {
+        "tau": 0.96,
+        "hit_rate": 0.42,
+        "false_hit_rate": 0.02,
+        "entity_false_hit_rate": 0.0
+      },
+      {
+        "tau": 0.98,
+        "hit_rate": 0.02,
+        "false_hit_rate": 0.02,
+        "entity_false_hit_rate": 0.0
+      }
+    ]
+  },
+  "llm_judged_false_hit_check": {
+    "operating_tau": 0.9,
+    "hits_checked": 40,
+    "false_hits": 0,
+    "false_hit_rate": 0.0,
+    "details": [
+      {
+        "query": "Tell me the weather in Tokyo today.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.954454243183136,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the weather like in Tokyo today?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9641423225402832,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the weather in Nairobi today.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9538668394088745,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the weather like in Nairobi today?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9674836993217468,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the weather in Lisbon today.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9531570672988892,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the weather like in Lisbon today?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9673717021942139,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the weather in Toronto today.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9544045329093933,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the weather like in Toronto today?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9645306468009949,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the weather in Jakarta today.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9557386636734009,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the weather like in Jakarta today?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9683833122253418,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the weather in Cairo today.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9568798542022705,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the weather like in Cairo today?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9694133996963501,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the weather in Oslo today.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9571720361709595,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the weather like in Oslo today?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9666085243225098,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the weather in Manila today.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9558420777320862,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the weather like in Manila today?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9657137989997864,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the weather in Warsaw today.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9537532925605774,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the weather like in Warsaw today?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9662002325057983,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the weather in Lima today.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9570149183273315,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the weather like in Lima today?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9679018259048462,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the capital of France.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9380528926849365,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the capital city of France?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9712442755699158,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the capital of Brazil.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9335406422615051,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the capital city of Brazil?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9684655070304871,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the capital of Kenya.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9418229460716248,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the capital city of Kenya?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9673206210136414,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the capital of Norway.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9416391849517822,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the capital city of Norway?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9665270447731018,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the capital of Vietnam.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9386566281318665,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the capital city of Vietnam?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9686614871025085,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the capital of Chile.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9404218792915344,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the capital city of Chile?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9655113220214844,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the capital of Greece.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9399560689926147,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the capital city of Greece?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9697445034980774,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the capital of Peru.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9435741305351257,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the capital city of Peru?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9694366455078125,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the capital of Egypt.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9367019534111023,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the capital city of Egypt?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9724715948104858,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "Tell me the capital of Canada.",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9475277662277222,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      },
+      {
+        "query": "What's the capital city of Canada?",
+        "cache_status": "hit_semantic",
+        "similarity": 0.9607214331626892,
+        "verdict": "tie",
+        "judge_mode": "heuristic_fallback",
+        "false_hit": false
+      }
+    ]
+  }
+}
