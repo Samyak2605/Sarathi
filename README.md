@@ -7,11 +7,8 @@ latency, and quality per key/model/day.**
 
 *Sarathi = charioteer — it steers every request your AI products make.*
 
-[![ci](https://github.com/<your-org>/sarathi/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-org>/sarathi/actions/workflows/ci.yml)
-[![nightly canary](https://github.com/<your-org>/sarathi/actions/workflows/canary.yml/badge.svg)](https://github.com/<your-org>/sarathi/actions/workflows/canary.yml)
-
-> Replace `<your-org>/sarathi` above with the real GitHub path once this
-> repo is pushed — the badges will start rendering from the first CI run.
+[![ci](https://github.com/Samyak2605/Sarathi/actions/workflows/ci.yml/badge.svg)](https://github.com/Samyak2605/Sarathi/actions/workflows/ci.yml)
+[![nightly canary](https://github.com/Samyak2605/Sarathi/actions/workflows/canary.yml/badge.svg)](https://github.com/Samyak2605/Sarathi/actions/workflows/canary.yml)
 
 One line to switch any OpenAI-compatible app over:
 
@@ -91,7 +88,7 @@ perfectly (see [Limitations](#limitations)).
 ## Quickstart (zero credentials)
 
 ```bash
-git clone <this-repo> && cd sarathi
+git clone https://github.com/Samyak2605/Sarathi.git && cd Sarathi
 python3.11 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn gateway.api.main:app --reload
