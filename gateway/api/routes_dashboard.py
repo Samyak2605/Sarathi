@@ -95,13 +95,16 @@ async def dashboard(request: Request) -> HTMLResponse:
         breaker_rows += f"""
         <tr><td>{html.escape(name)}</td>
         <td><span class="badge badge-{status}"><span class="dot"></span>{label}</span></td>
-        <td class="num">{snap['events_in_window']}</td></tr>"""
+        <td class="num">{snap["events_in_window"]}</td></tr>"""
 
     if by_key:
         max_key_cost = max(v["cost"] for v in by_key.values()) or 1.0
         key_bars = "".join(
             _bar_row(
-                f"{k[:14]}…", v["cost"], max_key_cost, "--series-blue",
+                f"{k[:14]}…",
+                v["cost"],
+                max_key_cost,
+                "--series-blue",
                 f"Rs{v['cost']:.4f} · {v['requests']} req",
             )
             for k, v in sorted(by_key.items(), key=lambda kv: -kv[1]["cost"])[:8]
@@ -113,7 +116,10 @@ async def dashboard(request: Request) -> HTMLResponse:
         max_model_cost = max(v["cost"] for v in by_model.values()) or 1.0
         model_bars = "".join(
             _bar_row(
-                m, v["cost"], max_model_cost, _model_color_var(m),
+                m,
+                v["cost"],
+                max_model_cost,
+                _model_color_var(m),
                 f"Rs{v['cost']:.4f} · {v['requests']} req",
             )
             for m, v in sorted(by_model.items(), key=lambda kv: -kv[1]["cost"])[:8]
@@ -123,9 +129,9 @@ async def dashboard(request: Request) -> HTMLResponse:
 
     if records:
         recent_rows = "".join(
-            f"""<tr><td class="num muted">{time.strftime('%H:%M:%S', time.localtime(r.created_at))}</td>
-            <td>{html.escape(r.model_used or '-')}</td>
-            <td class="muted">{html.escape(r.route_tier or '-')}</td>
+            f"""<tr><td class="num muted">{time.strftime("%H:%M:%S", time.localtime(r.created_at))}</td>
+            <td>{html.escape(r.model_used or "-")}</td>
+            <td class="muted">{html.escape(r.route_tier or "-")}</td>
             <td>{html.escape(r.cache_status)}</td>
             <td>{html.escape(r.outcome)}</td>
             <td class="num">{r.latency_ms:.0f}ms</td>
