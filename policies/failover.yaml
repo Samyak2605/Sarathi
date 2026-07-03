@@ -11,10 +11,14 @@ chains:
       model: mock-small
 
   mid:
-    - provider: gemini
-      model: gemini-2.0-flash
+    # Groq primary: it's free and reliable. Gemini is the fallback, not
+    # primary, because the free-tier Gemini key in use hits a
+    # quota-exceeded (limit: 0) error on every model tried -- looks like
+    # a key-provisioning issue (see docs/HUMAN_TASKS.md), not a code bug.
     - provider: groq
       model: llama-3.1-8b-instant
+    - provider: gemini
+      model: gemini-2.0-flash
     - provider: mock
       model: mock-mid
 
