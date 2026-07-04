@@ -373,6 +373,11 @@ Said plainly, because a project that only lists its wins isn't finished:
   provider slot with a mock stand-in so failover chains are exercisable
   without credentials; nothing currently stops it from being left on
   alongside real LIVE keys, so deploys should confirm it's unset.
+- **SQLite on Render's free tier has no persistent disk attached.**
+  Metering history and the semantic cache reset on every redeploy/restart
+  there. Fine for a demo; real deployments should either add a paid
+  Render disk or run in LIVE mode against Supabase, which doesn't have
+  this problem.
 
 "Production-grade" appears nowhere in this README unless CI and tests
 back it — and where they don't (LIVE traffic, the deploy, the video),
