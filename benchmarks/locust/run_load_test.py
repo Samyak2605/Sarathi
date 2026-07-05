@@ -135,9 +135,16 @@ async def main() -> None:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     base_url = f"http://127.0.0.1:{PORT}"
 
+    # Explicitly blank Groq/Gemini -- this benchmark measures GATEWAY
+    # overhead against the mock provider's simulated latency, not a real
+    # provider's network latency/rate limits. pydantic-settings reads .env
+    # directly regardless of this subprocess's inherited os.environ, so a
+    # real key on disk must be overridden explicitly, not just omitted.
+    env = {**os.environ, "GROQ_API_KEY": "", "GEMINI_API_KEY": ""}
     proc = subprocess.Popen(
         [sys.executable, "-m", "uvicorn", "gateway.api.main:app", "--port", str(PORT)],
         cwd=REPO_ROOT,
+        env=env,
     )
     try:
         wait_for_healthy(base_url)
