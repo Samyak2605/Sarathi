@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import os
 from collections import defaultdict
 from pathlib import Path
 
@@ -28,7 +29,11 @@ from gateway.schemas import ChatCompletionRequest
 
 DATASET_PATH = Path(__file__).parent / "routing_dataset.jsonl"
 RESULTS_DIR = Path(__file__).parent.parent.parent / "results" / "routing"
-CONCURRENCY = 16
+# Overridable via env: a LIVE run against a free-tier provider needs much
+# lower concurrency and a smaller sample than the full mock-mode sweep.
+CONCURRENCY = int(os.environ.get("SARATHI_BENCH_CONCURRENCY", 16))
+SAMPLE_SIZE = os.environ.get("SARATHI_BENCH_SAMPLE_SIZE")
+PACING_S = float(os.environ.get("SARATHI_BENCH_PACING_S", 0))
 
 
 def load_dataset() -> list[dict]:
@@ -59,7 +64,11 @@ async def evaluate_row(registry, routing_policy, row: dict, sem: asyncio.Semapho
     async with sem:
         try:
             candidate_resp, _ = await chat_with_failover(registry, decision.chain, request)
+            if PACING_S:
+                await asyncio.sleep(PACING_S)
             reference_resp, _ = await chat_with_failover(registry, "large", request)
+            if PACING_S:
+                await asyncio.sleep(PACING_S)
             verdict = await judge(
                 registry,
                 row["prompt"],
@@ -80,6 +89,8 @@ async def main() -> None:
     registry = build_registry(settings)
     routing_policy = RoutingPolicy.load(settings.routing_policy_path)
     rows = load_dataset()
+    if SAMPLE_SIZE:
+        rows = rows[: int(SAMPLE_SIZE)]
 
     sem = asyncio.Semaphore(CONCURRENCY)
     results = await asyncio.gather(
