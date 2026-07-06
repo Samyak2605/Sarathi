@@ -22,6 +22,7 @@ import httpx
 
 from canary.judge import judge
 from gateway.config import get_settings
+from gateway.providers.errors import ProviderRateLimitError
 from gateway.providers.registry import build_registry
 from gateway.schemas import ChatCompletionRequest
 
@@ -29,11 +30,17 @@ PROBES_PATH = Path(__file__).parent / "probe_set" / "probes.jsonl"
 RESULTS_DIR = Path(__file__).parent.parent / "results" / "canary"
 DRIFT_THRESHOLD = 0.85
 PROBE_TIMEOUT_S = 20.0
+# Below this many completed (non-rate-limited) probes, a low pass rate is
+# free-tier flakiness, not a meaningful drift signal -- don't cry wolf.
+MIN_COMPLETED_FOR_DRIFT_SIGNAL = 15
 
 
 def load_probes() -> list[dict]:
     with open(PROBES_PATH) as f:
         return [json.loads(line) for line in f if line.strip()]
+
+
+PROBE_PACING_S = 2.0  # spacing between probes -- free-tier Groq/Gemini RPM limits
 
 
 async def canary_model(registry, provider_name: str, model: str, probes: list[dict]) -> dict:
@@ -46,6 +53,7 @@ async def canary_model(registry, provider_name: str, model: str, probes: list[di
         try:
             response = await adapter.chat(request, model, timeout_s=PROBE_TIMEOUT_S)
             candidate = response.choices[0].message.content
+            await asyncio.sleep(PROBE_PACING_S)
             verdict = await judge(registry, probe["prompt"], probe["reference_answer"], candidate)
             outcomes.append(
                 {
@@ -55,16 +63,31 @@ async def canary_model(registry, provider_name: str, model: str, probes: list[di
                     "judge_mode": verdict.mode,
                 }
             )
+        except ProviderRateLimitError as e:
+            # Free-tier rate limiting is infra flakiness, not a quality
+            # signal -- exclude it from the pass rate rather than let it
+            # masquerade as drift. Recorded separately so it's still visible.
+            outcomes.append({"id": probe["id"], "error": str(e), "verdict": "rate_limited"})
         except Exception as e:
             outcomes.append({"id": probe["id"], "error": str(e), "verdict": "loss"})
+        await asyncio.sleep(PROBE_PACING_S)
 
-    passed = sum(1 for o in outcomes if o["verdict"] in ("win", "tie"))
-    pass_rate = passed / len(outcomes)
+    completed = [o for o in outcomes if o["verdict"] != "rate_limited"]
+    rate_limited_count = len(outcomes) - len(completed)
+    passed = sum(1 for o in completed if o["verdict"] in ("win", "tie"))
+    pass_rate = (passed / len(completed)) if completed else None
+    insufficient_data = len(completed) < MIN_COMPLETED_FOR_DRIFT_SIGNAL
     return {
         "provider": provider_name,
         "model": model,
+        "probes_total": len(outcomes),
+        "rate_limited_count": rate_limited_count,
+        "completed_count": len(completed),
         "pass_rate": pass_rate,
-        "drift_detected": pass_rate < DRIFT_THRESHOLD,
+        "insufficient_data": insufficient_data,
+        "drift_detected": (not insufficient_data)
+        and pass_rate is not None
+        and pass_rate < DRIFT_THRESHOLD,
         "outcomes": outcomes,
     }
 
@@ -110,9 +133,12 @@ async def main() -> None:
     if settings.gemini_api_key:
         targets += [("gemini", m) for m in registry.adapters["gemini"].supported_models]
 
-    reports = await asyncio.gather(
-        *(canary_model(registry, provider, model, probes) for provider, model in targets)
-    )
+    # Sequential, not gathered -- Groq's rate limit is per-account, not
+    # per-model, so testing two Groq models concurrently just doubles the
+    # request rate against the same shared quota.
+    reports = []
+    for provider, model in targets:
+        reports.append(await canary_model(registry, provider, model, probes))
     await registry.aclose()
 
     drifted = [r for r in reports if r["drift_detected"]]
@@ -132,8 +158,11 @@ async def main() -> None:
     await maybe_open_github_issue(drifted)
 
     for r in reports:
+        pr = f"{r['pass_rate']:.2%}" if r["pass_rate"] is not None else "n/a"
         print(
-            f"{r['provider']}/{r['model']}: pass_rate={r['pass_rate']:.2%} drift={r['drift_detected']}"
+            f"{r['provider']}/{r['model']}: pass_rate={pr} "
+            f"(completed {r['completed_count']}/{r['probes_total']}, "
+            f"{r['rate_limited_count']} rate-limited) drift={r['drift_detected']}"
         )
 
     if drifted:
