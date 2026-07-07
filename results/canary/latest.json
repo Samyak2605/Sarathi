@@ -1,5 +1,527 @@
 {
-  "status": "skipped",
-  "reason": "no LIVE provider credentials configured (GROQ_API_KEY/GEMINI_API_KEY unset)",
-  "timestamp": 1783879490.3535922
+  "status": "ok",
+  "timestamp": 1783887479.654361,
+  "drift_threshold": 0.85,
+  "results": [
+    {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "probes_total": 30,
+      "rate_limited_count": 0,
+      "completed_count": 30,
+      "pass_rate": 1.0,
+      "insufficient_data": false,
+      "drift_detected": false,
+      "outcomes": [
+        {
+          "id": "p01",
+          "candidate": "Tokyo",
+          "verdict": "tie",
+          "judge_mode": "llm"
+        },
+        {
+          "id": "p02",
+          "candidate": "Canberra",
+          "verdict": "tie",
+          "judge_mode": "llm"
+        },
+        {
+          "id": "p03",
+          "candidate": "96",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p04",
+          "candidate": "12",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p05",
+          "candidate": "William Shakespeare",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p06",
+          "candidate": "Au",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p07",
+          "candidate": "Na",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p08",
+          "candidate": "7",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p09",
+          "candidate": "Jupiter.",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p10",
+          "candidate": "2",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p11",
+          "candidate": "1945",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p12",
+          "candidate": "100",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p13",
+          "candidate": "Java.",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p14",
+          "candidate": "Hypertext Transfer Protocol",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p15",
+          "candidate": "Central Processing Unit",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p16",
+          "candidate": "O(log n)",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p17",
+          "candidate": "Stack",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p18",
+          "candidate": "Queue",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p19",
+          "candidate": "DISTINCT",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p20",
+          "candidate": "404",
+          "verdict": "tie",
+          "judge_mode": "llm"
+        },
+        {
+          "id": "p21",
+          "candidate": "500",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p22",
+          "candidate": "Application Programming Interface",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p23",
+          "candidate": "0",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p24",
+          "candidate": "Mars.",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p25",
+          "candidate": "Yen",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p26",
+          "candidate": "9",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p27",
+          "candidate": "6",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p28",
+          "candidate": "Carbon dioxide.",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p29",
+          "candidate": "Mount Everest.",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p30",
+          "candidate": "Nile River",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        }
+      ]
+    },
+    {
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "probes_total": 30,
+      "rate_limited_count": 27,
+      "completed_count": 3,
+      "pass_rate": 1.0,
+      "insufficient_data": true,
+      "drift_detected": false,
+      "outcomes": [
+        {
+          "id": "p01",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p02",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p03",
+          "candidate": "96",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p04",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p05",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p06",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p07",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p08",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p09",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p10",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p11",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p12",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p13",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p14",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p15",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p16",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p17",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p18",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p19",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p20",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p21",
+          "candidate": "500",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        },
+        {
+          "id": "p22",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p23",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p24",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p25",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p26",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p27",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p28",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p29",
+          "error": "[groq] Groq rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p30",
+          "candidate": "Nile",
+          "verdict": "tie",
+          "judge_mode": "heuristic_fallback"
+        }
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.0-flash",
+      "probes_total": 30,
+      "rate_limited_count": 30,
+      "completed_count": 0,
+      "pass_rate": null,
+      "insufficient_data": true,
+      "drift_detected": false,
+      "outcomes": [
+        {
+          "id": "p01",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p02",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p03",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p04",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p05",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p06",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p07",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p08",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p09",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p10",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p11",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p12",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p13",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p14",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p15",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p16",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p17",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p18",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p19",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p20",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p21",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p22",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p23",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p24",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p25",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p26",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p27",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p28",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p29",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        },
+        {
+          "id": "p30",
+          "error": "[gemini] Gemini rate limit hit",
+          "verdict": "rate_limited"
+        }
+      ]
+    }
+  ],
+  "drifted": []
 }
