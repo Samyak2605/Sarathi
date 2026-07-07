@@ -118,10 +118,22 @@ and boots clean — see [Verification](#what-was-actually-run)).
 `results/`, and every artifact says which provider generated it.**
 Nothing here is hand-typed. Where a number is `provider=mock` — because
 this was built and verified with zero API credentials — the exact caveat
-is quoted from the results file, not smoothed over. The one supervised
-LIVE session (real Groq/Gemini traffic) is tracked as a pending step in
-`docs/HUMAN_TASKS.md`; re-running the same scripts with `.env` populated
-regenerates every table below against real models.
+is quoted from the results file, not smoothed over.
+
+A small supervised LIVE sample against real Groq traffic has now been run
+(`results/cost/cost_report_live.json`, `results/routing/parity_live.json`,
+`results/canary/latest.json`) — see the callouts below each mock table.
+Sample sizes there are intentionally small (12-15 requests, not the full
+500/1,000), because Groq's free tier turned out to rate-limit
+`llama-3.3-70b-versatile` (the large tier) hard — often only 2-3
+successful calls per 30 attempted, even paced at one request per 2.5s.
+The small-tier model (`llama-3.1-8b-instant`) had no such issue (100%
+success across 30 canary probes). Gemini currently can't be validated
+live at all: every model returns `429 RESOURCE_EXHAUSTED ... limit: 0`,
+which looks like a key-provisioning issue, not a code bug (see
+`docs/HUMAN_TASKS.md`). The full-scale 500/1,000-request runs below
+remain `provider=mock` until either the rate limit headroom or a paid
+tier makes a larger LIVE run practical.
 
 ### 1. Cost — `results/cost/cost_report_mock.json`
 
@@ -141,6 +153,15 @@ replayed once against an always-large baseline and once through Sarathi.
 `gateway/metering/pricing.py`, sourced from public Groq/Gemini list
 prices), but the responses themselves are mock-generated, and traffic is
 synthetic support-style prompts, not real SupportMind 2.0 logs.
+
+**LIVE sample** (`results/cost/cost_report_live.json`, 15 requests,
+real Groq): **94.4% savings** (Rs6.84/1k direct → Rs0.38/1k through
+Sarathi). Provider mix was honestly mixed by free-tier rate limits —
+the direct-to-large baseline hit real `llama-3.3-70b-versatile` for only
+2/15 requests (13 failed over to mock after retries), while the routed
+candidate calls hit real Groq for 7/13 non-cached requests. Both are
+recorded in `direct_baseline_provider_mix` / `candidate_provider_mix` in
+that file rather than averaged away.
 
 ### 2. Quality parity — `results/routing/parity_mock.json`
 
@@ -162,6 +183,15 @@ the harness, not evidence of real quality parity — that requires the
 LIVE session. `judge_mode=heuristic_fallback` (embedding similarity)
 throughout, since there's no real large-tier model to act as an LLM
 judge without credentials.
+
+**LIVE sample** (`results/routing/parity_live.json`, 15 prompts, real
+Groq small-tier model): tier accuracy 100%, parity 93.3% (14/15). Small
+and drawn from one task-type slice of the dataset (`short_lookup`), not
+yet a stratified sample across categories — a real result, not a
+full replacement for the 500-prompt mock run above. Judging still fell
+back to the heuristic (`judge_mode=heuristic_fallback` throughout)
+because the large-tier judge model itself hit the same Groq rate limit
+described in table 1.
 
 ### 3. Cache — `results/cache/tau_sweep.json` + `tau_sweep.png`
 
@@ -325,11 +355,18 @@ Not claims — things executed in this environment, with results checked in:
 - `ruff check . && ruff format --check .` — clean.
 - `docker build -t sarathi .` — builds and boots; `/healthz` and
   `/v1/chat/completions` verified against the built image.
-- Every script in `benchmarks/` and `canary/run_canary.py` — run for
-  real against the mock provider; `canary/run_canary.py` specifically
-  verified to skip cleanly (exit 0, `status: skipped`) with no
-  credentials configured, which is what it will do in CI until Groq/Gemini
-  secrets are added.
+- Every script in `benchmarks/` — run for real against the mock provider;
+  the small-sample cost and routing-parity scripts have also been run
+  against real Groq (see the LIVE callouts above), and `run_load_test.py`
+  / `run_chaos_test.py` were fixed to explicitly force the mock provider
+  even with real keys in `.env`, since those two specifically measure
+  gateway/breaker behavior, not provider quality.
+- `canary/run_canary.py` — run both ways: skips cleanly (exit 0,
+  `status: skipped`) with no credentials, and run for real against Groq
+  (`results/canary/latest.json`) — 100% pass rate on the small model over
+  30 probes, and correctly reports "insufficient data" rather than false
+  "drift" for the large model and Gemini, both of which hit free-tier
+  rate/quota limits on most probes.
 
 ---
 
