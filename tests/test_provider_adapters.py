@@ -5,6 +5,8 @@ calls -- no real credentials or network access required.
 
 from __future__ import annotations
 
+import json
+
 import pytest
 
 from gateway.providers.errors import (
@@ -22,6 +24,15 @@ pytestmark = pytest.mark.asyncio
 
 def _req():
     return ChatCompletionRequest(messages=[{"role": "user", "content": "hi"}], temperature=0)
+
+
+async def test_max_completion_tokens_normalizes_to_max_tokens():
+    # SupportMind (and recent OpenAI/Groq SDKs) send max_completion_tokens,
+    # not max_tokens -- both must land in the same field for adapters to see it.
+    req = ChatCompletionRequest(
+        messages=[{"role": "user", "content": "hi"}], max_completion_tokens=256
+    )
+    assert req.max_tokens == 256
 
 
 async def test_groq_chat_success(httpx_mock):
@@ -44,6 +55,34 @@ async def test_groq_chat_success(httpx_mock):
     provider = GroqProvider(api_key="test-key")
     resp = await provider.chat(_req(), "llama-3.1-8b-instant", timeout_s=5)
     assert resp.choices[0].message.content == "hello"
+    await provider.aclose()
+
+
+async def test_groq_forwards_response_format(httpx_mock):
+    httpx_mock.add_response(
+        method="POST",
+        url="https://api.groq.com/openai/v1/chat/completions",
+        json={
+            "id": "cmpl-2",
+            "model": "llama-3.1-8b-instant",
+            "choices": [
+                {
+                    "index": 0,
+                    "message": {"role": "assistant", "content": "{}"},
+                    "finish_reason": "stop",
+                }
+            ],
+            "usage": {"prompt_tokens": 3, "completion_tokens": 1, "total_tokens": 4},
+        },
+    )
+    provider = GroqProvider(api_key="test-key")
+    req = ChatCompletionRequest(
+        messages=[{"role": "user", "content": "hi"}],
+        response_format={"type": "json_object"},
+    )
+    await provider.chat(req, "llama-3.1-8b-instant", timeout_s=5)
+    sent = json.loads(httpx_mock.get_requests()[0].content)
+    assert sent["response_format"] == {"type": "json_object"}
     await provider.aclose()
 
 

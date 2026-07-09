@@ -40,6 +40,8 @@ def _to_gemini_payload(request: ChatCompletionRequest) -> dict:
     }
     if request.max_tokens:
         payload["generationConfig"]["maxOutputTokens"] = request.max_tokens
+    if (request.response_format or {}).get("type") == "json_object":
+        payload["generationConfig"]["responseMimeType"] = "application/json"
     if system_parts:
         payload["systemInstruction"] = {"parts": [{"text": "\n".join(system_parts)}]}
     return payload

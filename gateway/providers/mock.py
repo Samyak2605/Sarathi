@@ -49,6 +49,12 @@ class MockProvider(ProviderAdapter):
     def _fake_reply(self, request: ChatCompletionRequest) -> str:
         last_user = next((m.content for m in reversed(request.messages) if m.role == "user"), "")
         word_count = max(1, len(last_user.split()))
+        if (request.response_format or {}).get("type") == "json_object":
+            # A caller requesting JSON mode will try to json.loads() this --
+            # a prose reply would crash it. Valid-but-empty is the honest
+            # answer for "the real provider was unavailable," not a fake
+            # structured payload pretending to be a real completion.
+            return "{}"
         return (
             f"[mock reply] Acknowledged a {word_count}-word prompt. "
             f"This is a deterministic canned completion used for offline "

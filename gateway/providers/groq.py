@@ -56,6 +56,8 @@ class GroqProvider(ProviderAdapter):
         }
         if request.max_tokens:
             payload["max_tokens"] = request.max_tokens
+        if request.response_format:
+            payload["response_format"] = request.response_format
         try:
             resp = await self._client.post(BASE_URL, json=payload, timeout=timeout_s)
         except httpx.TimeoutException as e:
@@ -80,6 +82,8 @@ class GroqProvider(ProviderAdapter):
         }
         if request.max_tokens:
             payload["max_tokens"] = request.max_tokens
+        if request.response_format:
+            payload["response_format"] = request.response_format
 
         try:
             async with self._client.stream(
