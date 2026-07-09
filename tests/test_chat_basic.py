@@ -55,6 +55,51 @@ async def test_streaming_completion_assembles_full_response(client, app):
     assert records[0].outcome == "ok"
 
 
+async def test_malformed_body_returns_clean_422(client):
+    # Regression: a non-JSON body (e.g. sent as form-encoded, no
+    # Content-Type) used to crash the validation error handler itself --
+    # exc.errors() carries the raw body as bytes, which plain JSONResponse
+    # can't serialize. Must return a clean 422, not a 500.
+    resp = await client.post(
+        "/v1/chat/completions",
+        headers={**AUTH_HEADERS, "Content-Type": "application/json"},
+        content=b"not json at all",
+    )
+    assert resp.status_code == 422
+    assert resp.json()["error"]["type"] == "invalid_request_error"
+
+
+async def test_json_mode_falls_back_to_valid_json_on_mock(client):
+    # A caller in JSON mode (e.g. SupportMind's agent) must get parseable
+    # JSON even if the request lands on the mock provider (failover) --
+    # a prose canned reply would crash json.loads() downstream.
+    resp = await client.post(
+        "/v1/chat/completions",
+        headers=AUTH_HEADERS,
+        json={
+            "messages": [{"role": "user", "content": "hi"}],
+            "response_format": {"type": "json_object"},
+        },
+    )
+    assert resp.status_code == 200
+    content = resp.json()["choices"][0]["message"]["content"]
+    import json
+
+    json.loads(content)  # must not raise
+
+
+async def test_openai_prefix_alias_matches_groq_sdk_path(client):
+    # The real `groq` SDK hardcodes "openai/v1/chat/completions" relative
+    # to base_url (mirroring api.groq.com's own path shape) -- this alias
+    # is what lets a client just swap base_url with zero code changes.
+    resp = await client.post(
+        "/openai/v1/chat/completions",
+        headers=AUTH_HEADERS,
+        json={"messages": [{"role": "user", "content": "hi"}]},
+    )
+    assert resp.status_code == 200
+
+
 async def test_models_endpoint_lists_all_tiers(client):
     resp = await client.get("/v1/models", headers=AUTH_HEADERS)
     assert resp.status_code == 200

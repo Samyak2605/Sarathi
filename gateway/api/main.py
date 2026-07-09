@@ -59,6 +59,15 @@ def create_app() -> FastAPI:
     app.include_router(admin_router)
     app.include_router(dashboard_router)
 
+    # Alias under /openai -- the real `groq` SDK (and some other
+    # OpenAI-compatible SDKs) hardcode "openai/v1/chat/completions" as
+    # their request path, mirroring Groq's own hosted API shape
+    # (api.groq.com/openai/v1/...), not the plain "/v1/chat/completions"
+    # OpenAI itself uses. Both paths hit the same handlers so either kind
+    # of client works against Sarathi with just a base_url change.
+    app.include_router(chat_router, prefix="/openai")
+    app.include_router(models_router, prefix="/openai")
+
     @app.get("/healthz")
     async def healthz():
         return {"status": "ok"}
