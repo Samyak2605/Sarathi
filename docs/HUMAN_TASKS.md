@@ -6,52 +6,43 @@ faking a result.
 
 ## Pending
 
-- [ ] **Fix the Gemini API key.** Every model returns `429 RESOURCE_EXHAUSTED
-      ... limit: 0` — a quota-provisioning issue, not a code bug (Groq works
-      fine with the same code path). The key you gave (`AQ.Ab8RN6...`) doesn't
-      match the standard Gemini Developer API key format (`AIzaSy...`) issued
-      by https://aistudio.google.com/app/apikey — go there directly, click
-      "Get API key" → "Create API key in new project", and swap the value in
-      `.env`. Until then, `policies/failover.yaml`'s mid tier runs Groq
-      primary / Gemini fallback, so the gateway degrades gracefully instead
-      of failing.
-- [ ] **Supabase project** — SUPABASE_URL/SERVICE_KEY are in `.env`, but
-      `docs/supabase_schema.sql` still needs to be run once in the Supabase
-      SQL editor (dashboard → SQL Editor → paste the file → run) before
-      SARATHI_MODE=live can use it — PostgREST has no way to create the
-      tables/pgvector index itself.
-- [ ] **SupportMind 2.0 integration** — on hold per your instruction until
-      that product is ready; you'll share the repo/local folder when it's
-      time to wire it in.
-- [ ] **Full-scale LIVE benchmark run** — a small paced LIVE sample now
-      exists (`results/cost/cost_report_live.json`,
+- [ ] **Fix the Gemini API key** (optional -- Groq covers LIVE mode).
+      Every model returns `429 RESOURCE_EXHAUSTED ... limit: 0` — a
+      quota-provisioning issue, not a code bug (Groq works fine with the
+      same code path). The key you gave (`AQ.Ab8RN6...`) doesn't match
+      the standard Gemini Developer API key format (`AIzaSy...`) issued
+      by https://aistudio.google.com/app/apikey, which has its own free
+      tier — go there directly, click "Get API key" → "Create API key in
+      new project", and swap the value in `.env`. Not a paid-only
+      feature as far as I can tell, just a mis-provisioned key; if AI
+      Studio genuinely won't issue a free key for your account/region,
+      that's worth confirming before writing it off. Until fixed,
+      `policies/failover.yaml`'s mid tier runs Groq primary / Gemini
+      fallback, so the gateway degrades gracefully instead of failing.
+- [ ] **Full-scale LIVE benchmark run** (optional, accepted limitation) —
+      small paced LIVE samples exist (`results/cost/cost_report_live.json`,
       `results/routing/parity_live.json`, `results/canary/latest.json`),
       but only 12-15 requests each, not the full 500/1,000-request mock
       scale. Groq's free tier rate-limits `llama-3.3-70b-versatile` (the
       large tier) hard -- often 2-3 successes per 30 attempts even at one
       request per 2.5s. Running the full scale would need either much
       longer pacing (slow) or a paid Groq tier.
-- [ ] **Record the chaos-kill demo video.** `benchmarks/chaos/run_chaos_test.py`
-      already produces the numeric evidence (results/chaos/chaos_test.json +
-      .png) automatically. For an actual on-camera recording:
-      1. `SARATHI_DEMO_MODE=true uvicorn gateway.api.main:app` (registers a
-         mock stand-in under the "groq" slot so there's a real 2-provider
-         chain to fail over across, with zero credentials).
-      2. Open `http://127.0.0.1:8000/dashboard` in a browser, screen-recorded.
-      3. In another terminal, start sending traffic, e.g. a shell loop of
-         `curl -s http://127.0.0.1:8000/v1/chat/completions -H "Authorization: Bearer sk-local-dev" -d '{"messages":[{"role":"user","content":"hi"}],"temperature":0.7}'`.
-      4. Kill it on camera: `curl -X POST localhost:8000/admin/chaos -H "x-admin-token: change-me" -d '{"provider":"groq","inject_500":true}'`
-         and narrate the dashboard's breaker state flipping to "open" while
-         traffic keeps succeeding.
-      5. Revive it: same command with `"inject_500": false`.
 
 ## Resolved
 
 - [x] Groq API key — provided, verified working with a real completion.
 - [x] Upstash Redis — URL + token in `.env`.
+- [x] Supabase project — `docs/supabase_schema.sql` run in the Supabase
+      SQL editor; tables + pgvector index confirmed created.
 - [x] Render account + deploy — live at the Render-assigned URL, deployed
       from `main` via the `render.yaml` blueprint.
 - [x] GitHub repo pushed — https://github.com/Samyak2605/Sarathi
+- [x] SupportMind 2.0 integration — pointed at Sarathi via `base_url`
+      (zero code changes beyond adding the field), verified end to end
+      (Ask + Resolve, real cache hit), recorded on video.
+- [x] Chaos-kill demo video recorded — combined with the cache-hit demo
+      in one take. Both recordings linked from the README's Demo section
+      (GitHub release `demo-v1`).
 
 ## Notes
 

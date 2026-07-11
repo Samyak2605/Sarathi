@@ -17,6 +17,19 @@ One line to switch any OpenAI-compatible app over:
 + client = OpenAI(base_url="https://<your-sarathi-deploy>/v1", api_key="sk-...")
 ```
 
+## Demo (2 screen recordings, no audio)
+
+- **[SupportMind × Sarathi](https://github.com/Samyak2605/Sarathi/releases/download/demo-v1/supportmind-integration-demo.mov)**
+  — a separate RAG + LangGraph-agent support product ([SupportMind](https://github.com/Samyak2605/SupportMind))
+  pointed at Sarathi via a one-line `base_url` swap. Real "Ask" and
+  "Resolve" requests routed through Sarathi, then the same question
+  asked twice to show an instant, Rs0 exact cache hit on the dashboard.
+- **[Cache + chaos + failover, live](https://github.com/Samyak2605/Sarathi/releases/download/demo-v1/cache-and-chaos-failover-demo.mov)**
+  — cache hit, then the primary provider is killed mid-traffic via the
+  admin chaos-injection API. Traffic keeps flowing (zero dropped
+  requests), the circuit breaker flips to open and recovers, all on the
+  embedded dashboard in real time.
+
 ---
 
 ## Why this exists
@@ -347,11 +360,14 @@ sarathi/
 
 Not claims — things executed in this environment, with results checked in:
 
-- `pytest -q` — **37 passed**, covering streaming + non-streaming
+- `pytest -q` — **42 passed**, covering streaming + non-streaming
   completions, exact/semantic cache hits, router tier decisions, circuit
   breaker state transitions, failover across providers, mid-stream chaos
-  injection, and Groq/Gemini adapter error-taxonomy mapping (mocked HTTP,
-  no real credentials).
+  injection, Groq/Gemini adapter error-taxonomy mapping (mocked HTTP, no
+  real credentials), and the OpenAI-compatibility surface added while
+  integrating a real third-party client (`response_format`,
+  `max_completion_tokens`, the `/openai/v1/...` path alias, and a
+  malformed-body edge case that used to crash the error handler itself).
 - `ruff check . && ruff format --check .` — clean.
 - `docker build -t sarathi .` — builds and boots; `/healthz` and
   `/v1/chat/completions` verified against the built image.
@@ -367,6 +383,13 @@ Not claims — things executed in this environment, with results checked in:
   30 probes, and correctly reports "insufficient data" rather than false
   "drift" for the large model and Gemini, both of which hit free-tier
   rate/quota limits on most probes.
+- **A real third-party client, integrated and recorded.** SupportMind (a
+  separate RAG + agent product) was pointed at this gateway via
+  `base_url`, with zero code changes to its LLM call sites beyond adding
+  a `base_url` field — real "Ask" and "Resolve" traffic routed through
+  Sarathi's cache, router, and metering, captured on video (see Demo,
+  above). Also produced the two compatibility fixes covered by the new
+  tests: JSON-mode passthrough and the Groq-SDK path alias.
 
 ---
 
@@ -374,11 +397,19 @@ Not claims — things executed in this environment, with results checked in:
 
 Said plainly, because a project that only lists its wins isn't finished:
 
-- **No real model has answered a request in this repo yet.** Every
-  number above is `provider=mock`, run with zero credentials by design
-  (see `docs/BLUEPRINT.md` §3, the local-first design). The one
-  supervised LIVE session, the Render deploy, and pointing a real client
-  at this gateway are tracked in `docs/HUMAN_TASKS.md` and are not done.
+- **The five benchmark tables are still mostly `provider=mock` by design**
+  (see `docs/BLUEPRINT.md` §3, the local-first build). A real client
+  (SupportMind, see the demo videos above) and a small paced LIVE sample
+  against real Groq (tables 1-2) have both been run for real; the
+  full-scale 500/1,000-request benchmark runs have not, since Groq's
+  free tier rate-limits the large model hard (see table notes above).
+- **Gemini is not wired up in LIVE mode.** The configured key returns
+  `429 RESOURCE_EXHAUSTED ... limit: 0` on every model — it doesn't
+  match the standard key format issued by Google AI Studio, and fixing
+  it needs a correctly-provisioned key (AI Studio's free tier should
+  cover it; this hasn't been re-attempted). Groq is primary everywhere
+  in the meantime, so this doesn't block anything -- it's a live-mode
+  gap, not a missing feature.
 - **The semantic cache has a known false-hit mode.** At the operating
   threshold (tau=0.90), ~7.5% of "same template, different entity"
   prompts (e.g. "capital of France" vs. "capital of Japan") still collide,
