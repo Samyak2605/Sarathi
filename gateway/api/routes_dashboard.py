@@ -357,6 +357,13 @@ mock-vs-live provider labeling for benchmark evidence lives in <code>results/</c
 <script>
   lucide.createIcons();
 
+  // Opt-in auto-refresh for recordings/demos: /dashboard?autorefresh=3
+  // reloads every 3s. Off by default so normal browsing isn't disrupted.
+  const autoRefreshSeconds = Number(new URLSearchParams(location.search).get('autorefresh'));
+  if (autoRefreshSeconds > 0) {{
+    setTimeout(() => location.reload(), autoRefreshSeconds * 1000);
+  }}
+
   const trend = {trend_json};
   const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const ink = isDark ? '#b9b8b3' : '#52514e';
