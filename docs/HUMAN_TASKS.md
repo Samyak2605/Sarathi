@@ -23,11 +23,14 @@ faking a result.
 - [ ] **SupportMind 2.0 integration** — on hold per your instruction until
       that product is ready; you'll share the repo/local folder when it's
       time to wire it in.
-- [ ] **Full LIVE benchmark re-run** — Groq connectivity is verified
-      (`GroqProvider` returned a real completion), but the benchmark scripts
-      in `benchmarks/` haven't been re-run against LIVE yet (still
-      `provider=mock` in `results/`). Say the word and I'll run them for real
-      now that Groq works.
+- [ ] **Full-scale LIVE benchmark run** — a small paced LIVE sample now
+      exists (`results/cost/cost_report_live.json`,
+      `results/routing/parity_live.json`, `results/canary/latest.json`),
+      but only 12-15 requests each, not the full 500/1,000-request mock
+      scale. Groq's free tier rate-limits `llama-3.3-70b-versatile` (the
+      large tier) hard -- often 2-3 successes per 30 attempts even at one
+      request per 2.5s. Running the full scale would need either much
+      longer pacing (slow) or a paid Groq tier.
 - [ ] **Record the chaos-kill demo video.** `benchmarks/chaos/run_chaos_test.py`
       already produces the numeric evidence (results/chaos/chaos_test.json +
       .png) automatically. For an actual on-camera recording:
