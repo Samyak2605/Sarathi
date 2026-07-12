@@ -1,0 +1,500 @@
+{"prompt": "What is the capital of France?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0000"}
+{"prompt": "What is the capital of Japan?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0001"}
+{"prompt": "What is the capital of Brazil?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0002"}
+{"prompt": "What is the capital of Egypt?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0003"}
+{"prompt": "What is the capital of Canada?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0004"}
+{"prompt": "What is the capital of Kenya?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0005"}
+{"prompt": "What is the capital of Norway?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0006"}
+{"prompt": "What is the capital of Peru?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0007"}
+{"prompt": "What is the capital of Thailand?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0008"}
+{"prompt": "What is the capital of Portugal?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0009"}
+{"prompt": "What is the capital of Vietnam?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0010"}
+{"prompt": "What is the capital of Chile?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0011"}
+{"prompt": "What is the capital of Morocco?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0012"}
+{"prompt": "What is the capital of Finland?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0013"}
+{"prompt": "What is the capital of Greece?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0014"}
+{"prompt": "Define photosynthesis in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0015"}
+{"prompt": "Define inflation in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0016"}
+{"prompt": "Define recursion in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0017"}
+{"prompt": "Define entropy in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0018"}
+{"prompt": "Define osmosis in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0019"}
+{"prompt": "Define latency in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0020"}
+{"prompt": "Define amortization in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0021"}
+{"prompt": "Define compiler in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0022"}
+{"prompt": "Define diaspora in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0023"}
+{"prompt": "Define algorithm in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0024"}
+{"prompt": "Define quorum in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0025"}
+{"prompt": "Define throughput in one sentence.", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0026"}
+{"prompt": "What year did the fall of the Berlin Wall happen?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0027"}
+{"prompt": "What year did the first moon landing happen?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0028"}
+{"prompt": "What year did the invention of the printing press happen?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0029"}
+{"prompt": "What year did the founding of the United Nations happen?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0030"}
+{"prompt": "What year did the launch of the first satellite happen?", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0031"}
+{"prompt": "Is the following review positive or negative: 'This product completely broke after two days, total waste of money.'", "task_type": "classification", "expected_tier": "small", "id": "route-0032"}
+{"prompt": "Is the following review positive or negative: 'Absolutely loved it, works exactly as described and arrived early!'", "task_type": "classification", "expected_tier": "small", "id": "route-0033"}
+{"prompt": "Is the following review positive or negative: 'It's okay, does the job but nothing special.'", "task_type": "classification", "expected_tier": "small", "id": "route-0034"}
+{"prompt": "Is the following review positive or negative: 'Terrible customer service, would not buy again.'", "task_type": "classification", "expected_tier": "small", "id": "route-0035"}
+{"prompt": "Is the following review positive or negative: 'Best purchase I've made all year, highly recommend to everyone.'", "task_type": "classification", "expected_tier": "small", "id": "route-0036"}
+{"prompt": "Classify whether 'photosynthesis' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0037"}
+{"prompt": "Classify whether 'inflation' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0038"}
+{"prompt": "Classify whether 'recursion' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0039"}
+{"prompt": "Classify whether 'entropy' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0040"}
+{"prompt": "Classify whether 'osmosis' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0041"}
+{"prompt": "Classify whether 'latency' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0042"}
+{"prompt": "Classify whether 'amortization' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0043"}
+{"prompt": "Classify whether 'compiler' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0044"}
+{"prompt": "Classify whether 'diaspora' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0045"}
+{"prompt": "Classify whether 'algorithm' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0046"}
+{"prompt": "Classify whether 'quorum' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0047"}
+{"prompt": "Classify whether 'throughput' is a computer-science term or a biology term.", "task_type": "classification", "expected_tier": "small", "id": "route-0048"}
+{"prompt": "Rephrase this message more formally: 'hey can u send me that file when u get a sec thanks'", "task_type": "rephrase", "expected_tier": "small", "id": "route-0049"}
+{"prompt": "Rephrase this message more formally: 'the meeting got pushed back idk why but ill let u know'", "task_type": "rephrase", "expected_tier": "small", "id": "route-0050"}
+{"prompt": "Rephrase this message more formally: 'this is kinda broken ngl someone should fix it'", "task_type": "rephrase", "expected_tier": "small", "id": "route-0051"}
+{"prompt": "Rewrite this as a formal invitation to visit France for a conference.", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0052"}
+{"prompt": "Rewrite this as a formal invitation to visit Japan for a conference.", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0053"}
+{"prompt": "Rewrite this as a formal invitation to visit Brazil for a conference.", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0054"}
+{"prompt": "Rewrite this as a formal invitation to visit Egypt for a conference.", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0055"}
+{"prompt": "Rewrite this as a formal invitation to visit Canada for a conference.", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0056"}
+{"prompt": "Rewrite this as a formal invitation to visit Kenya for a conference.", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0057"}
+{"prompt": "Rewrite this as a formal invitation to visit Norway for a conference.", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0058"}
+{"prompt": "Rewrite this as a formal invitation to visit Peru for a conference.", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0059"}
+{"prompt": "Write a Python function that reverses a linked list. Include a docstring and a usage example.", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0060"}
+{"prompt": "Write a Python function that checks if a string is a palindrome. Include a docstring and a usage example.", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0061"}
+{"prompt": "Write a Python function that merges two sorted arrays. Include a docstring and a usage example.", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0062"}
+{"prompt": "Write a Python function that finds the longest common subsequence. Include a docstring and a usage example.", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0063"}
+{"prompt": "Write a Python function that implements a LRU cache. Include a docstring and a usage example.", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0064"}
+{"prompt": "Write a Python function that computes the nth Fibonacci number iteratively. Include a docstring and a usage example.", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0065"}
+{"prompt": "Here is a stack trace from production:\n```TypeError: 'NoneType' object is not subscriptable```\nExplain step by step what's likely causing this bug and how to fix it.", "task_type": "debugging", "expected_tier": "large", "id": "route-0066"}
+{"prompt": "Here is a stack trace from production:\n```IndexError: list index out of range in a pagination loop```\nExplain step by step what's likely causing this bug and how to fix it.", "task_type": "debugging", "expected_tier": "large", "id": "route-0067"}
+{"prompt": "Here is a stack trace from production:\n```RecursionError: maximum recursion depth exceeded in a tree traversal```\nExplain step by step what's likely causing this bug and how to fix it.", "task_type": "debugging", "expected_tier": "large", "id": "route-0068"}
+{"prompt": "Here is a stack trace from production:\n```deadlock between two goroutines sharing a mutex```\nExplain step by step what's likely causing this bug and how to fix it.", "task_type": "debugging", "expected_tier": "large", "id": "route-0069"}
+{"prompt": "Explain step by step why why do some materials become superconductors at low temperatures, and compare it to conventional resistive heating.", "task_type": "reasoning", "expected_tier": "large", "id": "route-0070"}
+{"prompt": "Explain step by step why why distributed consensus is hard, and compare it to single-node transaction commit.", "task_type": "reasoning", "expected_tier": "large", "id": "route-0071"}
+{"prompt": "Explain step by step why why cache invalidation is considered a hard problem, and compare it to cache population.", "task_type": "reasoning", "expected_tier": "large", "id": "route-0072"}
+{"prompt": "Explain step by step why why microservice architectures increase operational complexity, and compare it to a monolith.", "task_type": "reasoning", "expected_tier": "large", "id": "route-0073"}
+{"prompt": "Design and compare a message queue-based architecture versus a direct synchronous RPC architecture for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes.", "task_type": "long_form", "expected_tier": "large", "id": "route-0074"}
+{"prompt": "Design and compare SQL databases versus NoSQL document stores for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes.", "task_type": "long_form", "expected_tier": "large", "id": "route-0075"}
+{"prompt": "Design and compare server-side rendering versus client-side rendering for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes.", "task_type": "long_form", "expected_tier": "large", "id": "route-0076"}
+{"prompt": "Design and compare a monorepo versus polyrepo setup for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes.", "task_type": "long_form", "expected_tier": "large", "id": "route-0077"}
+{"prompt": "What is the capital of France? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0078"}
+{"prompt": "What is the capital of Japan? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0079"}
+{"prompt": "What is the capital of Brazil? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0080"}
+{"prompt": "What is the capital of Egypt? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0081"}
+{"prompt": "What is the capital of Canada? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0082"}
+{"prompt": "What is the capital of Kenya? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0083"}
+{"prompt": "What is the capital of Norway? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0084"}
+{"prompt": "What is the capital of Peru? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0085"}
+{"prompt": "What is the capital of Thailand? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0086"}
+{"prompt": "What is the capital of Portugal? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0087"}
+{"prompt": "What is the capital of Vietnam? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0088"}
+{"prompt": "What is the capital of Chile? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0089"}
+{"prompt": "What is the capital of Morocco? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0090"}
+{"prompt": "What is the capital of Finland? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0091"}
+{"prompt": "What is the capital of Greece? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0092"}
+{"prompt": "Define photosynthesis in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0093"}
+{"prompt": "Define inflation in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0094"}
+{"prompt": "Define recursion in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0095"}
+{"prompt": "Define entropy in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0096"}
+{"prompt": "Define osmosis in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0097"}
+{"prompt": "Define latency in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0098"}
+{"prompt": "Define amortization in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0099"}
+{"prompt": "Define compiler in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0100"}
+{"prompt": "Define diaspora in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0101"}
+{"prompt": "Define algorithm in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0102"}
+{"prompt": "Define quorum in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0103"}
+{"prompt": "Define throughput in one sentence. (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0104"}
+{"prompt": "What year did the fall of the Berlin Wall happen? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0105"}
+{"prompt": "What year did the first moon landing happen? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0106"}
+{"prompt": "What year did the invention of the printing press happen? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0107"}
+{"prompt": "What year did the founding of the United Nations happen? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0108"}
+{"prompt": "What year did the launch of the first satellite happen? (variant #1)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0109"}
+{"prompt": "Is the following review positive or negative: 'This product completely broke after two days, total waste of money.' (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0110"}
+{"prompt": "Is the following review positive or negative: 'Absolutely loved it, works exactly as described and arrived early!' (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0111"}
+{"prompt": "Is the following review positive or negative: 'It's okay, does the job but nothing special.' (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0112"}
+{"prompt": "Is the following review positive or negative: 'Terrible customer service, would not buy again.' (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0113"}
+{"prompt": "Is the following review positive or negative: 'Best purchase I've made all year, highly recommend to everyone.' (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0114"}
+{"prompt": "Classify whether 'photosynthesis' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0115"}
+{"prompt": "Classify whether 'inflation' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0116"}
+{"prompt": "Classify whether 'recursion' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0117"}
+{"prompt": "Classify whether 'entropy' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0118"}
+{"prompt": "Classify whether 'osmosis' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0119"}
+{"prompt": "Classify whether 'latency' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0120"}
+{"prompt": "Classify whether 'amortization' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0121"}
+{"prompt": "Classify whether 'compiler' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0122"}
+{"prompt": "Classify whether 'diaspora' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0123"}
+{"prompt": "Classify whether 'algorithm' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0124"}
+{"prompt": "Classify whether 'quorum' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0125"}
+{"prompt": "Classify whether 'throughput' is a computer-science term or a biology term. (variant #1)", "task_type": "classification", "expected_tier": "small", "id": "route-0126"}
+{"prompt": "Rephrase this message more formally: 'hey can u send me that file when u get a sec thanks' (variant #1)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0127"}
+{"prompt": "Rephrase this message more formally: 'the meeting got pushed back idk why but ill let u know' (variant #1)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0128"}
+{"prompt": "Rephrase this message more formally: 'this is kinda broken ngl someone should fix it' (variant #1)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0129"}
+{"prompt": "Rewrite this as a formal invitation to visit France for a conference. (variant #1)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0130"}
+{"prompt": "Rewrite this as a formal invitation to visit Japan for a conference. (variant #1)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0131"}
+{"prompt": "Rewrite this as a formal invitation to visit Brazil for a conference. (variant #1)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0132"}
+{"prompt": "Rewrite this as a formal invitation to visit Egypt for a conference. (variant #1)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0133"}
+{"prompt": "Rewrite this as a formal invitation to visit Canada for a conference. (variant #1)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0134"}
+{"prompt": "Rewrite this as a formal invitation to visit Kenya for a conference. (variant #1)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0135"}
+{"prompt": "Rewrite this as a formal invitation to visit Norway for a conference. (variant #1)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0136"}
+{"prompt": "Rewrite this as a formal invitation to visit Peru for a conference. (variant #1)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0137"}
+{"prompt": "Write a Python function that reverses a linked list. Include a docstring and a usage example. (variant #1)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0138"}
+{"prompt": "Write a Python function that checks if a string is a palindrome. Include a docstring and a usage example. (variant #1)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0139"}
+{"prompt": "Write a Python function that merges two sorted arrays. Include a docstring and a usage example. (variant #1)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0140"}
+{"prompt": "Write a Python function that finds the longest common subsequence. Include a docstring and a usage example. (variant #1)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0141"}
+{"prompt": "Write a Python function that implements a LRU cache. Include a docstring and a usage example. (variant #1)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0142"}
+{"prompt": "Write a Python function that computes the nth Fibonacci number iteratively. Include a docstring and a usage example. (variant #1)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0143"}
+{"prompt": "Here is a stack trace from production:\n```TypeError: 'NoneType' object is not subscriptable```\nExplain step by step what's likely causing this bug and how to fix it. (variant #1)", "task_type": "debugging", "expected_tier": "large", "id": "route-0144"}
+{"prompt": "Here is a stack trace from production:\n```IndexError: list index out of range in a pagination loop```\nExplain step by step what's likely causing this bug and how to fix it. (variant #1)", "task_type": "debugging", "expected_tier": "large", "id": "route-0145"}
+{"prompt": "Here is a stack trace from production:\n```RecursionError: maximum recursion depth exceeded in a tree traversal```\nExplain step by step what's likely causing this bug and how to fix it. (variant #1)", "task_type": "debugging", "expected_tier": "large", "id": "route-0146"}
+{"prompt": "Here is a stack trace from production:\n```deadlock between two goroutines sharing a mutex```\nExplain step by step what's likely causing this bug and how to fix it. (variant #1)", "task_type": "debugging", "expected_tier": "large", "id": "route-0147"}
+{"prompt": "Explain step by step why why do some materials become superconductors at low temperatures, and compare it to conventional resistive heating. (variant #1)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0148"}
+{"prompt": "Explain step by step why why distributed consensus is hard, and compare it to single-node transaction commit. (variant #1)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0149"}
+{"prompt": "Explain step by step why why cache invalidation is considered a hard problem, and compare it to cache population. (variant #1)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0150"}
+{"prompt": "Explain step by step why why microservice architectures increase operational complexity, and compare it to a monolith. (variant #1)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0151"}
+{"prompt": "Design and compare a message queue-based architecture versus a direct synchronous RPC architecture for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #1)", "task_type": "long_form", "expected_tier": "large", "id": "route-0152"}
+{"prompt": "Design and compare SQL databases versus NoSQL document stores for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #1)", "task_type": "long_form", "expected_tier": "large", "id": "route-0153"}
+{"prompt": "Design and compare server-side rendering versus client-side rendering for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #1)", "task_type": "long_form", "expected_tier": "large", "id": "route-0154"}
+{"prompt": "Design and compare a monorepo versus polyrepo setup for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #1)", "task_type": "long_form", "expected_tier": "large", "id": "route-0155"}
+{"prompt": "What is the capital of France? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0156"}
+{"prompt": "What is the capital of Japan? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0157"}
+{"prompt": "What is the capital of Brazil? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0158"}
+{"prompt": "What is the capital of Egypt? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0159"}
+{"prompt": "What is the capital of Canada? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0160"}
+{"prompt": "What is the capital of Kenya? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0161"}
+{"prompt": "What is the capital of Norway? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0162"}
+{"prompt": "What is the capital of Peru? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0163"}
+{"prompt": "What is the capital of Thailand? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0164"}
+{"prompt": "What is the capital of Portugal? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0165"}
+{"prompt": "What is the capital of Vietnam? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0166"}
+{"prompt": "What is the capital of Chile? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0167"}
+{"prompt": "What is the capital of Morocco? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0168"}
+{"prompt": "What is the capital of Finland? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0169"}
+{"prompt": "What is the capital of Greece? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0170"}
+{"prompt": "Define photosynthesis in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0171"}
+{"prompt": "Define inflation in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0172"}
+{"prompt": "Define recursion in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0173"}
+{"prompt": "Define entropy in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0174"}
+{"prompt": "Define osmosis in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0175"}
+{"prompt": "Define latency in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0176"}
+{"prompt": "Define amortization in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0177"}
+{"prompt": "Define compiler in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0178"}
+{"prompt": "Define diaspora in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0179"}
+{"prompt": "Define algorithm in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0180"}
+{"prompt": "Define quorum in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0181"}
+{"prompt": "Define throughput in one sentence. (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0182"}
+{"prompt": "What year did the fall of the Berlin Wall happen? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0183"}
+{"prompt": "What year did the first moon landing happen? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0184"}
+{"prompt": "What year did the invention of the printing press happen? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0185"}
+{"prompt": "What year did the founding of the United Nations happen? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0186"}
+{"prompt": "What year did the launch of the first satellite happen? (variant #2)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0187"}
+{"prompt": "Is the following review positive or negative: 'This product completely broke after two days, total waste of money.' (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0188"}
+{"prompt": "Is the following review positive or negative: 'Absolutely loved it, works exactly as described and arrived early!' (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0189"}
+{"prompt": "Is the following review positive or negative: 'It's okay, does the job but nothing special.' (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0190"}
+{"prompt": "Is the following review positive or negative: 'Terrible customer service, would not buy again.' (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0191"}
+{"prompt": "Is the following review positive or negative: 'Best purchase I've made all year, highly recommend to everyone.' (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0192"}
+{"prompt": "Classify whether 'photosynthesis' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0193"}
+{"prompt": "Classify whether 'inflation' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0194"}
+{"prompt": "Classify whether 'recursion' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0195"}
+{"prompt": "Classify whether 'entropy' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0196"}
+{"prompt": "Classify whether 'osmosis' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0197"}
+{"prompt": "Classify whether 'latency' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0198"}
+{"prompt": "Classify whether 'amortization' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0199"}
+{"prompt": "Classify whether 'compiler' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0200"}
+{"prompt": "Classify whether 'diaspora' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0201"}
+{"prompt": "Classify whether 'algorithm' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0202"}
+{"prompt": "Classify whether 'quorum' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0203"}
+{"prompt": "Classify whether 'throughput' is a computer-science term or a biology term. (variant #2)", "task_type": "classification", "expected_tier": "small", "id": "route-0204"}
+{"prompt": "Rephrase this message more formally: 'hey can u send me that file when u get a sec thanks' (variant #2)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0205"}
+{"prompt": "Rephrase this message more formally: 'the meeting got pushed back idk why but ill let u know' (variant #2)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0206"}
+{"prompt": "Rephrase this message more formally: 'this is kinda broken ngl someone should fix it' (variant #2)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0207"}
+{"prompt": "Rewrite this as a formal invitation to visit France for a conference. (variant #2)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0208"}
+{"prompt": "Rewrite this as a formal invitation to visit Japan for a conference. (variant #2)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0209"}
+{"prompt": "Rewrite this as a formal invitation to visit Brazil for a conference. (variant #2)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0210"}
+{"prompt": "Rewrite this as a formal invitation to visit Egypt for a conference. (variant #2)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0211"}
+{"prompt": "Rewrite this as a formal invitation to visit Canada for a conference. (variant #2)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0212"}
+{"prompt": "Rewrite this as a formal invitation to visit Kenya for a conference. (variant #2)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0213"}
+{"prompt": "Rewrite this as a formal invitation to visit Norway for a conference. (variant #2)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0214"}
+{"prompt": "Rewrite this as a formal invitation to visit Peru for a conference. (variant #2)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0215"}
+{"prompt": "Write a Python function that reverses a linked list. Include a docstring and a usage example. (variant #2)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0216"}
+{"prompt": "Write a Python function that checks if a string is a palindrome. Include a docstring and a usage example. (variant #2)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0217"}
+{"prompt": "Write a Python function that merges two sorted arrays. Include a docstring and a usage example. (variant #2)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0218"}
+{"prompt": "Write a Python function that finds the longest common subsequence. Include a docstring and a usage example. (variant #2)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0219"}
+{"prompt": "Write a Python function that implements a LRU cache. Include a docstring and a usage example. (variant #2)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0220"}
+{"prompt": "Write a Python function that computes the nth Fibonacci number iteratively. Include a docstring and a usage example. (variant #2)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0221"}
+{"prompt": "Here is a stack trace from production:\n```TypeError: 'NoneType' object is not subscriptable```\nExplain step by step what's likely causing this bug and how to fix it. (variant #2)", "task_type": "debugging", "expected_tier": "large", "id": "route-0222"}
+{"prompt": "Here is a stack trace from production:\n```IndexError: list index out of range in a pagination loop```\nExplain step by step what's likely causing this bug and how to fix it. (variant #2)", "task_type": "debugging", "expected_tier": "large", "id": "route-0223"}
+{"prompt": "Here is a stack trace from production:\n```RecursionError: maximum recursion depth exceeded in a tree traversal```\nExplain step by step what's likely causing this bug and how to fix it. (variant #2)", "task_type": "debugging", "expected_tier": "large", "id": "route-0224"}
+{"prompt": "Here is a stack trace from production:\n```deadlock between two goroutines sharing a mutex```\nExplain step by step what's likely causing this bug and how to fix it. (variant #2)", "task_type": "debugging", "expected_tier": "large", "id": "route-0225"}
+{"prompt": "Explain step by step why why do some materials become superconductors at low temperatures, and compare it to conventional resistive heating. (variant #2)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0226"}
+{"prompt": "Explain step by step why why distributed consensus is hard, and compare it to single-node transaction commit. (variant #2)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0227"}
+{"prompt": "Explain step by step why why cache invalidation is considered a hard problem, and compare it to cache population. (variant #2)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0228"}
+{"prompt": "Explain step by step why why microservice architectures increase operational complexity, and compare it to a monolith. (variant #2)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0229"}
+{"prompt": "Design and compare a message queue-based architecture versus a direct synchronous RPC architecture for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #2)", "task_type": "long_form", "expected_tier": "large", "id": "route-0230"}
+{"prompt": "Design and compare SQL databases versus NoSQL document stores for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #2)", "task_type": "long_form", "expected_tier": "large", "id": "route-0231"}
+{"prompt": "Design and compare server-side rendering versus client-side rendering for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #2)", "task_type": "long_form", "expected_tier": "large", "id": "route-0232"}
+{"prompt": "Design and compare a monorepo versus polyrepo setup for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #2)", "task_type": "long_form", "expected_tier": "large", "id": "route-0233"}
+{"prompt": "What is the capital of France? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0234"}
+{"prompt": "What is the capital of Japan? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0235"}
+{"prompt": "What is the capital of Brazil? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0236"}
+{"prompt": "What is the capital of Egypt? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0237"}
+{"prompt": "What is the capital of Canada? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0238"}
+{"prompt": "What is the capital of Kenya? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0239"}
+{"prompt": "What is the capital of Norway? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0240"}
+{"prompt": "What is the capital of Peru? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0241"}
+{"prompt": "What is the capital of Thailand? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0242"}
+{"prompt": "What is the capital of Portugal? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0243"}
+{"prompt": "What is the capital of Vietnam? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0244"}
+{"prompt": "What is the capital of Chile? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0245"}
+{"prompt": "What is the capital of Morocco? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0246"}
+{"prompt": "What is the capital of Finland? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0247"}
+{"prompt": "What is the capital of Greece? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0248"}
+{"prompt": "Define photosynthesis in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0249"}
+{"prompt": "Define inflation in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0250"}
+{"prompt": "Define recursion in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0251"}
+{"prompt": "Define entropy in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0252"}
+{"prompt": "Define osmosis in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0253"}
+{"prompt": "Define latency in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0254"}
+{"prompt": "Define amortization in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0255"}
+{"prompt": "Define compiler in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0256"}
+{"prompt": "Define diaspora in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0257"}
+{"prompt": "Define algorithm in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0258"}
+{"prompt": "Define quorum in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0259"}
+{"prompt": "Define throughput in one sentence. (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0260"}
+{"prompt": "What year did the fall of the Berlin Wall happen? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0261"}
+{"prompt": "What year did the first moon landing happen? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0262"}
+{"prompt": "What year did the invention of the printing press happen? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0263"}
+{"prompt": "What year did the founding of the United Nations happen? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0264"}
+{"prompt": "What year did the launch of the first satellite happen? (variant #3)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0265"}
+{"prompt": "Is the following review positive or negative: 'This product completely broke after two days, total waste of money.' (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0266"}
+{"prompt": "Is the following review positive or negative: 'Absolutely loved it, works exactly as described and arrived early!' (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0267"}
+{"prompt": "Is the following review positive or negative: 'It's okay, does the job but nothing special.' (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0268"}
+{"prompt": "Is the following review positive or negative: 'Terrible customer service, would not buy again.' (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0269"}
+{"prompt": "Is the following review positive or negative: 'Best purchase I've made all year, highly recommend to everyone.' (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0270"}
+{"prompt": "Classify whether 'photosynthesis' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0271"}
+{"prompt": "Classify whether 'inflation' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0272"}
+{"prompt": "Classify whether 'recursion' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0273"}
+{"prompt": "Classify whether 'entropy' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0274"}
+{"prompt": "Classify whether 'osmosis' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0275"}
+{"prompt": "Classify whether 'latency' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0276"}
+{"prompt": "Classify whether 'amortization' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0277"}
+{"prompt": "Classify whether 'compiler' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0278"}
+{"prompt": "Classify whether 'diaspora' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0279"}
+{"prompt": "Classify whether 'algorithm' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0280"}
+{"prompt": "Classify whether 'quorum' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0281"}
+{"prompt": "Classify whether 'throughput' is a computer-science term or a biology term. (variant #3)", "task_type": "classification", "expected_tier": "small", "id": "route-0282"}
+{"prompt": "Rephrase this message more formally: 'hey can u send me that file when u get a sec thanks' (variant #3)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0283"}
+{"prompt": "Rephrase this message more formally: 'the meeting got pushed back idk why but ill let u know' (variant #3)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0284"}
+{"prompt": "Rephrase this message more formally: 'this is kinda broken ngl someone should fix it' (variant #3)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0285"}
+{"prompt": "Rewrite this as a formal invitation to visit France for a conference. (variant #3)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0286"}
+{"prompt": "Rewrite this as a formal invitation to visit Japan for a conference. (variant #3)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0287"}
+{"prompt": "Rewrite this as a formal invitation to visit Brazil for a conference. (variant #3)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0288"}
+{"prompt": "Rewrite this as a formal invitation to visit Egypt for a conference. (variant #3)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0289"}
+{"prompt": "Rewrite this as a formal invitation to visit Canada for a conference. (variant #3)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0290"}
+{"prompt": "Rewrite this as a formal invitation to visit Kenya for a conference. (variant #3)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0291"}
+{"prompt": "Rewrite this as a formal invitation to visit Norway for a conference. (variant #3)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0292"}
+{"prompt": "Rewrite this as a formal invitation to visit Peru for a conference. (variant #3)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0293"}
+{"prompt": "Write a Python function that reverses a linked list. Include a docstring and a usage example. (variant #3)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0294"}
+{"prompt": "Write a Python function that checks if a string is a palindrome. Include a docstring and a usage example. (variant #3)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0295"}
+{"prompt": "Write a Python function that merges two sorted arrays. Include a docstring and a usage example. (variant #3)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0296"}
+{"prompt": "Write a Python function that finds the longest common subsequence. Include a docstring and a usage example. (variant #3)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0297"}
+{"prompt": "Write a Python function that implements a LRU cache. Include a docstring and a usage example. (variant #3)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0298"}
+{"prompt": "Write a Python function that computes the nth Fibonacci number iteratively. Include a docstring and a usage example. (variant #3)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0299"}
+{"prompt": "Here is a stack trace from production:\n```TypeError: 'NoneType' object is not subscriptable```\nExplain step by step what's likely causing this bug and how to fix it. (variant #3)", "task_type": "debugging", "expected_tier": "large", "id": "route-0300"}
+{"prompt": "Here is a stack trace from production:\n```IndexError: list index out of range in a pagination loop```\nExplain step by step what's likely causing this bug and how to fix it. (variant #3)", "task_type": "debugging", "expected_tier": "large", "id": "route-0301"}
+{"prompt": "Here is a stack trace from production:\n```RecursionError: maximum recursion depth exceeded in a tree traversal```\nExplain step by step what's likely causing this bug and how to fix it. (variant #3)", "task_type": "debugging", "expected_tier": "large", "id": "route-0302"}
+{"prompt": "Here is a stack trace from production:\n```deadlock between two goroutines sharing a mutex```\nExplain step by step what's likely causing this bug and how to fix it. (variant #3)", "task_type": "debugging", "expected_tier": "large", "id": "route-0303"}
+{"prompt": "Explain step by step why why do some materials become superconductors at low temperatures, and compare it to conventional resistive heating. (variant #3)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0304"}
+{"prompt": "Explain step by step why why distributed consensus is hard, and compare it to single-node transaction commit. (variant #3)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0305"}
+{"prompt": "Explain step by step why why cache invalidation is considered a hard problem, and compare it to cache population. (variant #3)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0306"}
+{"prompt": "Explain step by step why why microservice architectures increase operational complexity, and compare it to a monolith. (variant #3)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0307"}
+{"prompt": "Design and compare a message queue-based architecture versus a direct synchronous RPC architecture for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #3)", "task_type": "long_form", "expected_tier": "large", "id": "route-0308"}
+{"prompt": "Design and compare SQL databases versus NoSQL document stores for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #3)", "task_type": "long_form", "expected_tier": "large", "id": "route-0309"}
+{"prompt": "Design and compare server-side rendering versus client-side rendering for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #3)", "task_type": "long_form", "expected_tier": "large", "id": "route-0310"}
+{"prompt": "Design and compare a monorepo versus polyrepo setup for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #3)", "task_type": "long_form", "expected_tier": "large", "id": "route-0311"}
+{"prompt": "What is the capital of France? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0312"}
+{"prompt": "What is the capital of Japan? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0313"}
+{"prompt": "What is the capital of Brazil? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0314"}
+{"prompt": "What is the capital of Egypt? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0315"}
+{"prompt": "What is the capital of Canada? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0316"}
+{"prompt": "What is the capital of Kenya? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0317"}
+{"prompt": "What is the capital of Norway? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0318"}
+{"prompt": "What is the capital of Peru? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0319"}
+{"prompt": "What is the capital of Thailand? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0320"}
+{"prompt": "What is the capital of Portugal? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0321"}
+{"prompt": "What is the capital of Vietnam? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0322"}
+{"prompt": "What is the capital of Chile? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0323"}
+{"prompt": "What is the capital of Morocco? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0324"}
+{"prompt": "What is the capital of Finland? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0325"}
+{"prompt": "What is the capital of Greece? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0326"}
+{"prompt": "Define photosynthesis in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0327"}
+{"prompt": "Define inflation in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0328"}
+{"prompt": "Define recursion in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0329"}
+{"prompt": "Define entropy in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0330"}
+{"prompt": "Define osmosis in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0331"}
+{"prompt": "Define latency in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0332"}
+{"prompt": "Define amortization in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0333"}
+{"prompt": "Define compiler in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0334"}
+{"prompt": "Define diaspora in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0335"}
+{"prompt": "Define algorithm in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0336"}
+{"prompt": "Define quorum in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0337"}
+{"prompt": "Define throughput in one sentence. (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0338"}
+{"prompt": "What year did the fall of the Berlin Wall happen? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0339"}
+{"prompt": "What year did the first moon landing happen? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0340"}
+{"prompt": "What year did the invention of the printing press happen? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0341"}
+{"prompt": "What year did the founding of the United Nations happen? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0342"}
+{"prompt": "What year did the launch of the first satellite happen? (variant #4)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0343"}
+{"prompt": "Is the following review positive or negative: 'This product completely broke after two days, total waste of money.' (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0344"}
+{"prompt": "Is the following review positive or negative: 'Absolutely loved it, works exactly as described and arrived early!' (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0345"}
+{"prompt": "Is the following review positive or negative: 'It's okay, does the job but nothing special.' (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0346"}
+{"prompt": "Is the following review positive or negative: 'Terrible customer service, would not buy again.' (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0347"}
+{"prompt": "Is the following review positive or negative: 'Best purchase I've made all year, highly recommend to everyone.' (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0348"}
+{"prompt": "Classify whether 'photosynthesis' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0349"}
+{"prompt": "Classify whether 'inflation' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0350"}
+{"prompt": "Classify whether 'recursion' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0351"}
+{"prompt": "Classify whether 'entropy' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0352"}
+{"prompt": "Classify whether 'osmosis' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0353"}
+{"prompt": "Classify whether 'latency' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0354"}
+{"prompt": "Classify whether 'amortization' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0355"}
+{"prompt": "Classify whether 'compiler' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0356"}
+{"prompt": "Classify whether 'diaspora' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0357"}
+{"prompt": "Classify whether 'algorithm' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0358"}
+{"prompt": "Classify whether 'quorum' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0359"}
+{"prompt": "Classify whether 'throughput' is a computer-science term or a biology term. (variant #4)", "task_type": "classification", "expected_tier": "small", "id": "route-0360"}
+{"prompt": "Rephrase this message more formally: 'hey can u send me that file when u get a sec thanks' (variant #4)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0361"}
+{"prompt": "Rephrase this message more formally: 'the meeting got pushed back idk why but ill let u know' (variant #4)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0362"}
+{"prompt": "Rephrase this message more formally: 'this is kinda broken ngl someone should fix it' (variant #4)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0363"}
+{"prompt": "Rewrite this as a formal invitation to visit France for a conference. (variant #4)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0364"}
+{"prompt": "Rewrite this as a formal invitation to visit Japan for a conference. (variant #4)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0365"}
+{"prompt": "Rewrite this as a formal invitation to visit Brazil for a conference. (variant #4)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0366"}
+{"prompt": "Rewrite this as a formal invitation to visit Egypt for a conference. (variant #4)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0367"}
+{"prompt": "Rewrite this as a formal invitation to visit Canada for a conference. (variant #4)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0368"}
+{"prompt": "Rewrite this as a formal invitation to visit Kenya for a conference. (variant #4)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0369"}
+{"prompt": "Rewrite this as a formal invitation to visit Norway for a conference. (variant #4)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0370"}
+{"prompt": "Rewrite this as a formal invitation to visit Peru for a conference. (variant #4)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0371"}
+{"prompt": "Write a Python function that reverses a linked list. Include a docstring and a usage example. (variant #4)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0372"}
+{"prompt": "Write a Python function that checks if a string is a palindrome. Include a docstring and a usage example. (variant #4)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0373"}
+{"prompt": "Write a Python function that merges two sorted arrays. Include a docstring and a usage example. (variant #4)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0374"}
+{"prompt": "Write a Python function that finds the longest common subsequence. Include a docstring and a usage example. (variant #4)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0375"}
+{"prompt": "Write a Python function that implements a LRU cache. Include a docstring and a usage example. (variant #4)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0376"}
+{"prompt": "Write a Python function that computes the nth Fibonacci number iteratively. Include a docstring and a usage example. (variant #4)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0377"}
+{"prompt": "Here is a stack trace from production:\n```TypeError: 'NoneType' object is not subscriptable```\nExplain step by step what's likely causing this bug and how to fix it. (variant #4)", "task_type": "debugging", "expected_tier": "large", "id": "route-0378"}
+{"prompt": "Here is a stack trace from production:\n```IndexError: list index out of range in a pagination loop```\nExplain step by step what's likely causing this bug and how to fix it. (variant #4)", "task_type": "debugging", "expected_tier": "large", "id": "route-0379"}
+{"prompt": "Here is a stack trace from production:\n```RecursionError: maximum recursion depth exceeded in a tree traversal```\nExplain step by step what's likely causing this bug and how to fix it. (variant #4)", "task_type": "debugging", "expected_tier": "large", "id": "route-0380"}
+{"prompt": "Here is a stack trace from production:\n```deadlock between two goroutines sharing a mutex```\nExplain step by step what's likely causing this bug and how to fix it. (variant #4)", "task_type": "debugging", "expected_tier": "large", "id": "route-0381"}
+{"prompt": "Explain step by step why why do some materials become superconductors at low temperatures, and compare it to conventional resistive heating. (variant #4)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0382"}
+{"prompt": "Explain step by step why why distributed consensus is hard, and compare it to single-node transaction commit. (variant #4)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0383"}
+{"prompt": "Explain step by step why why cache invalidation is considered a hard problem, and compare it to cache population. (variant #4)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0384"}
+{"prompt": "Explain step by step why why microservice architectures increase operational complexity, and compare it to a monolith. (variant #4)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0385"}
+{"prompt": "Design and compare a message queue-based architecture versus a direct synchronous RPC architecture for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #4)", "task_type": "long_form", "expected_tier": "large", "id": "route-0386"}
+{"prompt": "Design and compare SQL databases versus NoSQL document stores for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #4)", "task_type": "long_form", "expected_tier": "large", "id": "route-0387"}
+{"prompt": "Design and compare server-side rendering versus client-side rendering for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #4)", "task_type": "long_form", "expected_tier": "large", "id": "route-0388"}
+{"prompt": "Design and compare a monorepo versus polyrepo setup for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #4)", "task_type": "long_form", "expected_tier": "large", "id": "route-0389"}
+{"prompt": "What is the capital of France? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0390"}
+{"prompt": "What is the capital of Japan? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0391"}
+{"prompt": "What is the capital of Brazil? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0392"}
+{"prompt": "What is the capital of Egypt? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0393"}
+{"prompt": "What is the capital of Canada? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0394"}
+{"prompt": "What is the capital of Kenya? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0395"}
+{"prompt": "What is the capital of Norway? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0396"}
+{"prompt": "What is the capital of Peru? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0397"}
+{"prompt": "What is the capital of Thailand? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0398"}
+{"prompt": "What is the capital of Portugal? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0399"}
+{"prompt": "What is the capital of Vietnam? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0400"}
+{"prompt": "What is the capital of Chile? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0401"}
+{"prompt": "What is the capital of Morocco? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0402"}
+{"prompt": "What is the capital of Finland? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0403"}
+{"prompt": "What is the capital of Greece? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0404"}
+{"prompt": "Define photosynthesis in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0405"}
+{"prompt": "Define inflation in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0406"}
+{"prompt": "Define recursion in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0407"}
+{"prompt": "Define entropy in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0408"}
+{"prompt": "Define osmosis in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0409"}
+{"prompt": "Define latency in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0410"}
+{"prompt": "Define amortization in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0411"}
+{"prompt": "Define compiler in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0412"}
+{"prompt": "Define diaspora in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0413"}
+{"prompt": "Define algorithm in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0414"}
+{"prompt": "Define quorum in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0415"}
+{"prompt": "Define throughput in one sentence. (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0416"}
+{"prompt": "What year did the fall of the Berlin Wall happen? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0417"}
+{"prompt": "What year did the first moon landing happen? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0418"}
+{"prompt": "What year did the invention of the printing press happen? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0419"}
+{"prompt": "What year did the founding of the United Nations happen? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0420"}
+{"prompt": "What year did the launch of the first satellite happen? (variant #5)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0421"}
+{"prompt": "Is the following review positive or negative: 'This product completely broke after two days, total waste of money.' (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0422"}
+{"prompt": "Is the following review positive or negative: 'Absolutely loved it, works exactly as described and arrived early!' (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0423"}
+{"prompt": "Is the following review positive or negative: 'It's okay, does the job but nothing special.' (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0424"}
+{"prompt": "Is the following review positive or negative: 'Terrible customer service, would not buy again.' (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0425"}
+{"prompt": "Is the following review positive or negative: 'Best purchase I've made all year, highly recommend to everyone.' (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0426"}
+{"prompt": "Classify whether 'photosynthesis' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0427"}
+{"prompt": "Classify whether 'inflation' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0428"}
+{"prompt": "Classify whether 'recursion' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0429"}
+{"prompt": "Classify whether 'entropy' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0430"}
+{"prompt": "Classify whether 'osmosis' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0431"}
+{"prompt": "Classify whether 'latency' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0432"}
+{"prompt": "Classify whether 'amortization' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0433"}
+{"prompt": "Classify whether 'compiler' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0434"}
+{"prompt": "Classify whether 'diaspora' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0435"}
+{"prompt": "Classify whether 'algorithm' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0436"}
+{"prompt": "Classify whether 'quorum' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0437"}
+{"prompt": "Classify whether 'throughput' is a computer-science term or a biology term. (variant #5)", "task_type": "classification", "expected_tier": "small", "id": "route-0438"}
+{"prompt": "Rephrase this message more formally: 'hey can u send me that file when u get a sec thanks' (variant #5)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0439"}
+{"prompt": "Rephrase this message more formally: 'the meeting got pushed back idk why but ill let u know' (variant #5)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0440"}
+{"prompt": "Rephrase this message more formally: 'this is kinda broken ngl someone should fix it' (variant #5)", "task_type": "rephrase", "expected_tier": "small", "id": "route-0441"}
+{"prompt": "Rewrite this as a formal invitation to visit France for a conference. (variant #5)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0442"}
+{"prompt": "Rewrite this as a formal invitation to visit Japan for a conference. (variant #5)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0443"}
+{"prompt": "Rewrite this as a formal invitation to visit Brazil for a conference. (variant #5)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0444"}
+{"prompt": "Rewrite this as a formal invitation to visit Egypt for a conference. (variant #5)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0445"}
+{"prompt": "Rewrite this as a formal invitation to visit Canada for a conference. (variant #5)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0446"}
+{"prompt": "Rewrite this as a formal invitation to visit Kenya for a conference. (variant #5)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0447"}
+{"prompt": "Rewrite this as a formal invitation to visit Norway for a conference. (variant #5)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0448"}
+{"prompt": "Rewrite this as a formal invitation to visit Peru for a conference. (variant #5)", "task_type": "rephrase", "expected_tier": "mid", "id": "route-0449"}
+{"prompt": "Write a Python function that reverses a linked list. Include a docstring and a usage example. (variant #5)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0450"}
+{"prompt": "Write a Python function that checks if a string is a palindrome. Include a docstring and a usage example. (variant #5)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0451"}
+{"prompt": "Write a Python function that merges two sorted arrays. Include a docstring and a usage example. (variant #5)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0452"}
+{"prompt": "Write a Python function that finds the longest common subsequence. Include a docstring and a usage example. (variant #5)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0453"}
+{"prompt": "Write a Python function that implements a LRU cache. Include a docstring and a usage example. (variant #5)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0454"}
+{"prompt": "Write a Python function that computes the nth Fibonacci number iteratively. Include a docstring and a usage example. (variant #5)", "task_type": "simple_code", "expected_tier": "mid", "id": "route-0455"}
+{"prompt": "Here is a stack trace from production:\n```TypeError: 'NoneType' object is not subscriptable```\nExplain step by step what's likely causing this bug and how to fix it. (variant #5)", "task_type": "debugging", "expected_tier": "large", "id": "route-0456"}
+{"prompt": "Here is a stack trace from production:\n```IndexError: list index out of range in a pagination loop```\nExplain step by step what's likely causing this bug and how to fix it. (variant #5)", "task_type": "debugging", "expected_tier": "large", "id": "route-0457"}
+{"prompt": "Here is a stack trace from production:\n```RecursionError: maximum recursion depth exceeded in a tree traversal```\nExplain step by step what's likely causing this bug and how to fix it. (variant #5)", "task_type": "debugging", "expected_tier": "large", "id": "route-0458"}
+{"prompt": "Here is a stack trace from production:\n```deadlock between two goroutines sharing a mutex```\nExplain step by step what's likely causing this bug and how to fix it. (variant #5)", "task_type": "debugging", "expected_tier": "large", "id": "route-0459"}
+{"prompt": "Explain step by step why why do some materials become superconductors at low temperatures, and compare it to conventional resistive heating. (variant #5)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0460"}
+{"prompt": "Explain step by step why why distributed consensus is hard, and compare it to single-node transaction commit. (variant #5)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0461"}
+{"prompt": "Explain step by step why why cache invalidation is considered a hard problem, and compare it to cache population. (variant #5)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0462"}
+{"prompt": "Explain step by step why why microservice architectures increase operational complexity, and compare it to a monolith. (variant #5)", "task_type": "reasoning", "expected_tier": "large", "id": "route-0463"}
+{"prompt": "Design and compare a message queue-based architecture versus a direct synchronous RPC architecture for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #5)", "task_type": "long_form", "expected_tier": "large", "id": "route-0464"}
+{"prompt": "Design and compare SQL databases versus NoSQL document stores for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #5)", "task_type": "long_form", "expected_tier": "large", "id": "route-0465"}
+{"prompt": "Design and compare server-side rendering versus client-side rendering for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #5)", "task_type": "long_form", "expected_tier": "large", "id": "route-0466"}
+{"prompt": "Design and compare a monorepo versus polyrepo setup for a high-traffic system. Discuss trade-offs in latency, consistency, operational cost, and failure modes. (variant #5)", "task_type": "long_form", "expected_tier": "large", "id": "route-0467"}
+{"prompt": "What is the capital of France? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0468"}
+{"prompt": "What is the capital of Japan? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0469"}
+{"prompt": "What is the capital of Brazil? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0470"}
+{"prompt": "What is the capital of Egypt? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0471"}
+{"prompt": "What is the capital of Canada? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0472"}
+{"prompt": "What is the capital of Kenya? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0473"}
+{"prompt": "What is the capital of Norway? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0474"}
+{"prompt": "What is the capital of Peru? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0475"}
+{"prompt": "What is the capital of Thailand? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0476"}
+{"prompt": "What is the capital of Portugal? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0477"}
+{"prompt": "What is the capital of Vietnam? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0478"}
+{"prompt": "What is the capital of Chile? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0479"}
+{"prompt": "What is the capital of Morocco? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0480"}
+{"prompt": "What is the capital of Finland? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0481"}
+{"prompt": "What is the capital of Greece? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0482"}
+{"prompt": "Define photosynthesis in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0483"}
+{"prompt": "Define inflation in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0484"}
+{"prompt": "Define recursion in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0485"}
+{"prompt": "Define entropy in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0486"}
+{"prompt": "Define osmosis in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0487"}
+{"prompt": "Define latency in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0488"}
+{"prompt": "Define amortization in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0489"}
+{"prompt": "Define compiler in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0490"}
+{"prompt": "Define diaspora in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0491"}
+{"prompt": "Define algorithm in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0492"}
+{"prompt": "Define quorum in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0493"}
+{"prompt": "Define throughput in one sentence. (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0494"}
+{"prompt": "What year did the fall of the Berlin Wall happen? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0495"}
+{"prompt": "What year did the first moon landing happen? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0496"}
+{"prompt": "What year did the invention of the printing press happen? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0497"}
+{"prompt": "What year did the founding of the United Nations happen? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0498"}
+{"prompt": "What year did the launch of the first satellite happen? (variant #6)", "task_type": "short_lookup", "expected_tier": "small", "id": "route-0499"}
