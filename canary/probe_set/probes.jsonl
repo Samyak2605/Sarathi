@@ -1,0 +1,30 @@
+{"id": "p01", "prompt": "What is the capital of Japan? Answer with just the city name.", "reference_answer": "Tokyo"}
+{"id": "p02", "prompt": "What is the capital of Australia? Answer with just the city name.", "reference_answer": "Canberra"}
+{"id": "p03", "prompt": "What is 12 multiplied by 8? Answer with just the number.", "reference_answer": "96"}
+{"id": "p04", "prompt": "What is 144 divided by 12? Answer with just the number.", "reference_answer": "12"}
+{"id": "p05", "prompt": "Who wrote the play Romeo and Juliet? Answer with just the name.", "reference_answer": "William Shakespeare"}
+{"id": "p06", "prompt": "What is the chemical symbol for gold? Answer with just the symbol.", "reference_answer": "Au"}
+{"id": "p07", "prompt": "What is the chemical symbol for sodium? Answer with just the symbol.", "reference_answer": "Na"}
+{"id": "p08", "prompt": "How many continents are there on Earth? Answer with just the number.", "reference_answer": "7"}
+{"id": "p09", "prompt": "What is the largest planet in our solar system? Answer with just the name.", "reference_answer": "Jupiter"}
+{"id": "p10", "prompt": "What is the smallest prime number? Answer with just the number.", "reference_answer": "2"}
+{"id": "p11", "prompt": "In which year did World War II end? Answer with just the year.", "reference_answer": "1945"}
+{"id": "p12", "prompt": "What is the boiling point of water in Celsius at sea level? Answer with just the number.", "reference_answer": "100"}
+{"id": "p13", "prompt": "What programming language is named after a type of coffee? Answer with just the name.", "reference_answer": "Java"}
+{"id": "p14", "prompt": "What does HTTP stand for? Answer with just the expansion.", "reference_answer": "HyperText Transfer Protocol"}
+{"id": "p15", "prompt": "What does CPU stand for? Answer with just the expansion.", "reference_answer": "Central Processing Unit"}
+{"id": "p16", "prompt": "What is the time complexity of binary search on a sorted array? Answer with just the big-O notation.", "reference_answer": "O(log n)"}
+{"id": "p17", "prompt": "What data structure uses LIFO (last in, first out) ordering? Answer with just the name.", "reference_answer": "Stack"}
+{"id": "p18", "prompt": "What data structure uses FIFO (first in, first out) ordering? Answer with just the name.", "reference_answer": "Queue"}
+{"id": "p19", "prompt": "What is the SQL keyword used to remove duplicate rows from a result set? Answer with just the keyword.", "reference_answer": "DISTINCT"}
+{"id": "p20", "prompt": "What HTTP status code means 'Not Found'? Answer with just the number.", "reference_answer": "404"}
+{"id": "p21", "prompt": "What HTTP status code means 'Internal Server Error'? Answer with just the number.", "reference_answer": "500"}
+{"id": "p22", "prompt": "What does the acronym API stand for? Answer with just the expansion.", "reference_answer": "Application Programming Interface"}
+{"id": "p23", "prompt": "What is the freezing point of water in Celsius? Answer with just the number.", "reference_answer": "0"}
+{"id": "p24", "prompt": "What planet is known as the Red Planet? Answer with just the name.", "reference_answer": "Mars"}
+{"id": "p25", "prompt": "What is the currency of Japan? Answer with just the name.", "reference_answer": "Yen"}
+{"id": "p26", "prompt": "What is the square root of 81? Answer with just the number.", "reference_answer": "9"}
+{"id": "p27", "prompt": "How many sides does a hexagon have? Answer with just the number.", "reference_answer": "6"}
+{"id": "p28", "prompt": "What gas do plants primarily absorb for photosynthesis? Answer with just the name.", "reference_answer": "Carbon dioxide"}
+{"id": "p29", "prompt": "What is the tallest mountain on Earth above sea level? Answer with just the name.", "reference_answer": "Mount Everest"}
+{"id": "p30", "prompt": "What is the longest river in the world? Answer with just the name.", "reference_answer": "Nile"}
