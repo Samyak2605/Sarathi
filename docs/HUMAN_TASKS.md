@@ -6,25 +6,28 @@ faking a result.
 
 ## Pending
 
-- [ ] **Groq API key** — free tier, for LIVE mode provider adapter + the one
-      LIVE benchmark session. Get at https://console.groq.com
-- [ ] **Gemini API key** — free tier, for LIVE mode provider adapter + LIVE
-      benchmark session. Get at https://aistudio.google.com/app/apikey
-- [ ] **Supabase project** (Postgres + pgvector) — for LIVE keys/usage DB and
-      vector cache. Free tier at https://supabase.com. Need: project URL +
-      service key.
-- [ ] **Upstash Redis** — free tier, for LIVE rate limiting. https://upstash.com
-      Need: REST URL + token.
-- [ ] **Render account + deploy** — free tier. `render.yaml` is already in
-      the repo root (Blueprint spec) so connecting the repo at
-      https://render.com should auto-detect it; fill in GROQ_API_KEY /
-      GEMINI_API_KEY / SUPABASE_* / UPSTASH_* as available (all optional --
-      the service runs in LOCAL mode with none of them set).
-- [ ] **SupportMind 2.0 base_url swap** — point it at the deployed Sarathi
-      URL so its traffic shows up on the dashboard for the README screenshot.
-- [ ] **Sit through one LIVE benchmark session** — I'll hand you scripts to
-      run once Groq/Gemini keys are in `.env`; this produces the real cost
-      and quality-parity numbers for the README.
+- [ ] **Fix the Gemini API key.** Every model returns `429 RESOURCE_EXHAUSTED
+      ... limit: 0` — a quota-provisioning issue, not a code bug (Groq works
+      fine with the same code path). The key you gave (`AQ.Ab8RN6...`) doesn't
+      match the standard Gemini Developer API key format (`AIzaSy...`) issued
+      by https://aistudio.google.com/app/apikey — go there directly, click
+      "Get API key" → "Create API key in new project", and swap the value in
+      `.env`. Until then, `policies/failover.yaml`'s mid tier runs Groq
+      primary / Gemini fallback, so the gateway degrades gracefully instead
+      of failing.
+- [ ] **Supabase project** — SUPABASE_URL/SERVICE_KEY are in `.env`, but
+      `docs/supabase_schema.sql` still needs to be run once in the Supabase
+      SQL editor (dashboard → SQL Editor → paste the file → run) before
+      SARATHI_MODE=live can use it — PostgREST has no way to create the
+      tables/pgvector index itself.
+- [ ] **SupportMind 2.0 integration** — on hold per your instruction until
+      that product is ready; you'll share the repo/local folder when it's
+      time to wire it in.
+- [ ] **Full LIVE benchmark re-run** — Groq connectivity is verified
+      (`GroqProvider` returned a real completion), but the benchmark scripts
+      in `benchmarks/` haven't been re-run against LIVE yet (still
+      `provider=mock` in `results/`). Say the word and I'll run them for real
+      now that Groq works.
 - [ ] **Record the chaos-kill demo video.** `benchmarks/chaos/run_chaos_test.py`
       already produces the numeric evidence (results/chaos/chaos_test.json +
       .png) automatically. For an actual on-camera recording:
@@ -41,7 +44,11 @@ faking a result.
 
 ## Resolved
 
-(none yet)
+- [x] Groq API key — provided, verified working with a real completion.
+- [x] Upstash Redis — URL + token in `.env`.
+- [x] Render account + deploy — live at the Render-assigned URL, deployed
+      from `main` via the `render.yaml` blueprint.
+- [x] GitHub repo pushed — https://github.com/Samyak2605/Sarathi
 
 ## Notes
 
