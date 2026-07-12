@@ -13,12 +13,18 @@ def sqlite_path(tmp_path):
 
 @pytest.fixture
 def app_settings(sqlite_path, monkeypatch):
+    # pydantic-settings reads .env directly (env_file="."), so a real
+    # GROQ_API_KEY/GEMINI_API_KEY on disk survives monkeypatch.delenv --
+    # that only clears os.environ, not the .env file source. Force these
+    # off explicitly so tests always exercise the mock-only LOCAL registry,
+    # regardless of what's in the developer's local .env.
     monkeypatch.setenv("SARATHI_MODE", "local")
     monkeypatch.setenv("SQLITE_PATH", sqlite_path)
-    monkeypatch.delenv("GROQ_API_KEY", raising=False)
-    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
     get_settings.cache_clear()
     settings = get_settings()
+    settings.groq_api_key = None
+    settings.gemini_api_key = None
+    settings.sarathi_demo_mode = False
     yield settings
     get_settings.cache_clear()
 
