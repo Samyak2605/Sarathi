@@ -106,6 +106,13 @@ async def main() -> None:
         "SARATHI_DEMO_MODE": "true",
         "SARATHI_ADMIN_TOKEN": ADMIN_TOKEN,
         "SQLITE_PATH": str(REPO_ROOT / "data" / "chaos_test.db"),
+        # Explicitly blank -- pydantic-settings reads .env directly (by file
+        # path, not from this subprocess's os.environ), so a real
+        # GROQ_API_KEY/GEMINI_API_KEY on disk would otherwise silently
+        # replace the demo mock stand-in this benchmark depends on. An
+        # explicit env var (even empty) outranks the .env file value.
+        "GROQ_API_KEY": "",
+        "GEMINI_API_KEY": "",
         "PATH": os.environ.get("PATH", ""),
     }
     proc = subprocess.Popen(
