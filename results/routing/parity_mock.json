@@ -1,0 +1,4897 @@
+{
+  "provider": "mock",
+  "caveat": "provider=mock: the mock provider returns the same canned reply regardless of which tier/model is asked (it only echoes word count), so candidate and reference text are byte-identical here and parity_rate=1.0 is an artifact of that, not evidence of real quality parity. This run validates the harness end-to-end with zero credentials; the real parity numbers require the LIVE benchmark session (see docs/HUMAN_TASKS.md) against actual Groq/Gemini models before this policy's claim can be trusted.",
+  "methodology": "Router.decide() run over a 500-prompt labeled dataset (benchmarks/replay/routing_dataset.jsonl). For every prompt routed below the large tier, both the routed tier and the large tier were called and judged by canary/judge.py (LLM judge via the large-tier chain, or a heuristic embedding-similarity fallback where noted).",
+  "dataset_size": 500,
+  "router_tier_accuracy": 0.892,
+  "eligible_routed_down_count": 422,
+  "parity_rate": 1.0,
+  "parity_target": 0.9,
+  "parity_pass_threshold_met": true,
+  "judge_modes_used": [
+    "heuristic_fallback"
+  ],
+  "by_category": {
+    "short_lookup": {
+      "total": 224,
+      "eligible": 224,
+      "parity_pass": 224
+    },
+    "classification": {
+      "total": 102,
+      "eligible": 102,
+      "parity_pass": 102
+    },
+    "rephrase": {
+      "total": 66,
+      "eligible": 60,
+      "parity_pass": 60
+    },
+    "simple_code": {
+      "total": 36,
+      "eligible": 36,
+      "parity_pass": 36
+    },
+    "debugging": {
+      "total": 24,
+      "eligible": 0,
+      "parity_pass": 0
+    },
+    "reasoning": {
+      "total": 24,
+      "eligible": 0,
+      "parity_pass": 0
+    },
+    "long_form": {
+      "total": 24,
+      "eligible": 0,
+      "parity_pass": 0
+    }
+  },
+  "results": [
+    {
+      "id": "route-0000",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0001",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0002",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0003",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0004",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0005",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0006",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0007",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0008",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0009",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0010",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0011",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0012",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0013",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0014",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0015",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0016",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0017",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0018",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0019",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0020",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0021",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0022",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0023",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0024",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0025",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0026",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0027",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0028",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0029",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0030",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0031",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0032",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0033",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0034",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0035",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0036",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0037",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0038",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0039",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0040",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0041",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0042",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0043",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0044",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0045",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0046",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0047",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0048",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0049",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0050",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "large",
+      "tier_match": false,
+      "eligible": false
+    },
+    {
+      "id": "route-0051",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0052",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0053",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0054",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0055",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0056",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0057",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0058",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0059",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0060",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0061",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0062",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0063",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0064",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0065",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0066",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0067",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0068",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0069",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0070",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0071",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0072",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0073",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0074",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0075",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0076",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0077",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0078",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0079",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0080",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0081",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0082",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0083",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0084",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0085",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0086",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0087",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0088",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0089",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0090",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0091",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0092",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0093",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0094",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0095",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0096",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0097",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0098",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0099",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0100",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0101",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0102",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0103",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0104",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0105",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0106",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0107",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0108",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0109",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0110",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0111",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0112",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0113",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0114",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0115",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0116",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0117",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0118",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0119",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0120",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0121",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0122",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0123",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0124",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0125",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0126",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0127",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0128",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "large",
+      "tier_match": false,
+      "eligible": false
+    },
+    {
+      "id": "route-0129",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0130",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0131",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0132",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0133",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0134",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0135",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0136",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0137",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0138",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0139",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0140",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0141",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0142",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0143",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0144",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0145",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0146",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0147",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0148",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0149",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0150",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0151",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0152",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0153",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0154",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0155",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0156",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0157",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0158",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0159",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0160",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0161",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0162",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0163",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0164",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0165",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0166",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0167",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0168",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0169",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0170",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0171",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0172",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0173",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0174",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0175",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0176",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0177",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0178",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0179",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0180",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0181",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0182",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0183",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0184",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0185",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0186",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0187",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0188",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0189",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0190",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0191",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0192",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0193",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0194",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0195",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0196",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0197",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0198",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0199",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0200",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0201",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0202",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0203",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0204",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0205",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0206",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "large",
+      "tier_match": false,
+      "eligible": false
+    },
+    {
+      "id": "route-0207",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0208",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0209",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0210",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0211",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0212",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0213",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0214",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0215",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0216",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0217",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0218",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0219",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0220",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0221",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0222",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0223",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0224",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0225",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0226",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0227",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0228",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0229",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0230",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0231",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0232",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0233",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0234",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0235",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0236",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0237",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0238",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0239",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0240",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0241",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0242",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0243",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0244",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0245",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0246",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0247",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0248",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0249",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0250",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0251",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0252",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0253",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0254",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0255",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0256",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0257",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0258",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0259",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0260",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0261",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0262",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0263",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0264",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0265",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0266",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0267",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0268",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0269",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0270",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0271",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0272",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0273",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0274",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0275",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0276",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0277",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0278",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0279",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0280",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0281",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0282",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0283",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0284",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "large",
+      "tier_match": false,
+      "eligible": false
+    },
+    {
+      "id": "route-0285",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0286",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0287",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0288",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0289",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0290",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0291",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0292",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0293",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0294",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0295",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0296",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0297",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0298",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0299",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0300",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0301",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0302",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0303",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0304",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0305",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0306",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0307",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0308",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0309",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0310",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0311",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0312",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0313",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0314",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0315",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0316",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0317",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0318",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0319",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0320",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0321",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0322",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0323",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0324",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0325",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0326",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0327",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0328",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0329",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0330",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0331",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0332",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0333",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0334",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0335",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0336",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0337",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0338",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0339",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0340",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0341",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0342",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0343",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0344",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0345",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0346",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0347",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0348",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0349",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0350",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0351",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0352",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0353",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0354",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0355",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0356",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0357",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0358",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0359",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0360",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0361",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0362",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "large",
+      "tier_match": false,
+      "eligible": false
+    },
+    {
+      "id": "route-0363",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0364",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0365",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0366",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0367",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0368",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0369",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0370",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0371",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0372",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0373",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0374",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0375",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0376",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0377",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0378",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0379",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0380",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0381",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0382",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0383",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0384",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0385",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0386",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0387",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0388",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0389",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0390",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0391",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0392",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0393",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0394",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0395",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0396",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0397",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0398",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0399",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0400",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0401",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0402",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0403",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0404",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0405",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0406",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0407",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0408",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0409",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0410",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0411",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0412",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0413",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0414",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0415",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0416",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0417",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0418",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0419",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0420",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0421",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0422",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0423",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0424",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0425",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0426",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0427",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0428",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0429",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0430",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0431",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0432",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0433",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0434",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0435",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0436",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0437",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0438",
+      "task_type": "classification",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0439",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0440",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "large",
+      "tier_match": false,
+      "eligible": false
+    },
+    {
+      "id": "route-0441",
+      "task_type": "rephrase",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0442",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0443",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0444",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0445",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0446",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0447",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0448",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0449",
+      "task_type": "rephrase",
+      "expected_tier": "mid",
+      "routed_tier": "small",
+      "tier_match": false,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0450",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0451",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0452",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0453",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0454",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0455",
+      "task_type": "simple_code",
+      "expected_tier": "mid",
+      "routed_tier": "mid",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0456",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0457",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0458",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0459",
+      "task_type": "debugging",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0460",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0461",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0462",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0463",
+      "task_type": "reasoning",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0464",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0465",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0466",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0467",
+      "task_type": "long_form",
+      "expected_tier": "large",
+      "routed_tier": "large",
+      "tier_match": true,
+      "eligible": false
+    },
+    {
+      "id": "route-0468",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0469",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0470",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0471",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0472",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0473",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0474",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0475",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0476",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0477",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0478",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0479",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0480",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0481",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0482",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0483",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0484",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0485",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0486",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0487",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0488",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0489",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0490",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0491",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0492",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0493",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0494",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0495",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0496",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0497",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0498",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    },
+    {
+      "id": "route-0499",
+      "task_type": "short_lookup",
+      "expected_tier": "small",
+      "routed_tier": "small",
+      "tier_match": true,
+      "eligible": true,
+      "verdict": "tie",
+      "judge_mode": "heuristic_fallback"
+    }
+  ]
+}
