@@ -1,0 +1,28 @@
+# Render Blueprint -- https://render.com/docs/blueprint-spec
+# Deploy: connect this repo on Render and it picks this up automatically,
+# or `render blueprint launch`. Free tier: cold starts after idle, noted
+# honestly in README Limitations.
+services:
+  - type: web
+    name: sarathi
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: SARATHI_MODE
+        value: local
+      - key: SARATHI_ADMIN_TOKEN
+        generateValue: true
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: UPSTASH_REDIS_REST_URL
+        sync: false
+      - key: UPSTASH_REDIS_REST_TOKEN
+        sync: false
