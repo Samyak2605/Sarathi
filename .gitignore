@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.db
+*.db-journal
+.pytest_cache/
+.ruff_cache/
+*.log
+.DS_Store
+node_modules/
+fastembed_cache/
+data/
