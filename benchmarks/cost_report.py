@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import os
 import random
 from pathlib import Path
 
@@ -32,8 +33,10 @@ from gateway.storage.sqlite_store import SQLiteStorage
 
 DATASET_PATH = Path(__file__).parent / "replay" / "routing_dataset.jsonl"
 RESULTS_DIR = Path(__file__).parent.parent / "results" / "cost"
-TRAFFIC_SIZE = 1000
-HOT_SUBSET_SIZE = 40
+# Overridable via env so a LIVE run against a free-tier provider can use a
+# smaller sample than the full mock-mode traffic replay (rate limits).
+TRAFFIC_SIZE = int(os.environ.get("SARATHI_BENCH_TRAFFIC_SIZE", 1000))
+HOT_SUBSET_SIZE = min(40, TRAFFIC_SIZE)
 HOT_TRAFFIC_FRACTION = 0.45
 RANDOM_SEED = 1234
 
@@ -73,6 +76,10 @@ async def main() -> None:
     cache_avoided_cost = 0.0
     routing_avoided_cost = 0.0
     tier_counts: dict[str, int] = {}
+    direct_provider_counts: dict[str, int] = {}
+    candidate_provider_counts: dict[str, int] = {}
+
+    pacing_s = float(os.environ.get("SARATHI_BENCH_PACING_S", 0))
 
     for row in traffic:
         request = ChatCompletionRequest(
@@ -80,7 +87,12 @@ async def main() -> None:
         )
 
         # Baseline: always the large tier, no cache, no routing.
-        direct_resp, _ = await chat_with_failover(registry, "large", request)
+        direct_resp, direct_outcome = await chat_with_failover(registry, "large", request)
+        if pacing_s:
+            await asyncio.sleep(pacing_s)
+        direct_provider_counts[direct_outcome.provider_used] = (
+            direct_provider_counts.get(direct_outcome.provider_used, 0) + 1
+        )
         direct_request_cost = cost_inr(
             direct_resp.model, direct_resp.usage.prompt_tokens, direct_resp.usage.completion_tokens
         )
@@ -96,7 +108,14 @@ async def main() -> None:
 
         decision = decide(request, routing_policy)
         tier_counts[decision.tier] = tier_counts.get(decision.tier, 0) + 1
-        candidate_resp, _ = await chat_with_failover(registry, decision.chain, request)
+        candidate_resp, candidate_outcome = await chat_with_failover(
+            registry, decision.chain, request
+        )
+        if pacing_s:
+            await asyncio.sleep(pacing_s)
+        candidate_provider_counts[candidate_outcome.provider_used] = (
+            candidate_provider_counts.get(candidate_outcome.provider_used, 0) + 1
+        )
         candidate_cost = cost_inr(
             candidate_resp.model,
             candidate_resp.usage.prompt_tokens,
@@ -120,7 +139,10 @@ async def main() -> None:
             "500-prompt routing dataset, not real SupportMind 2.0 logs -- "
             "see docs/HUMAN_TASKS.md for the LIVE benchmark session."
             if provider_mode == "mock"
-            else None
+            else "provider=live: traffic is still synthetic (not real SupportMind 2.0 "
+            "logs). Some requests may have failed over to the mock provider if a "
+            "free-tier rate limit was hit mid-run -- see "
+            "direct_baseline_provider_mix/candidate_provider_mix for the real split."
         ),
         "methodology": (
             f"{n} synthetic support-style requests ({HOT_TRAFFIC_FRACTION:.0%} drawn "
@@ -141,6 +163,8 @@ async def main() -> None:
             else None
         ),
         "tier_distribution": tier_counts,
+        "direct_baseline_provider_mix": direct_provider_counts,
+        "candidate_provider_mix": candidate_provider_counts,
     }
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
