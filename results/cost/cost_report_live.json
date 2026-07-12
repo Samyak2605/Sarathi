@@ -1,0 +1,26 @@
+{
+  "provider": "live",
+  "caveat": "provider=live: traffic is still synthetic (not real SupportMind 2.0 logs). Some requests may have failed over to the mock provider if a free-tier rate limit was hit mid-run -- see direct_baseline_provider_mix/candidate_provider_mix for the real split.",
+  "methodology": "15 synthetic support-style requests (45% drawn from a 15-prompt 'hot' FAQ-like subset, the rest from the full 500-prompt labeled dataset), replayed once against an always-large direct baseline and once through Sarathi's cache + cost-first router.",
+  "traffic_size": 15,
+  "direct_cost_inr_per_1k": 6.8445673333333295,
+  "sarathi_cost_inr_per_1k": 0.38395799999999997,
+  "cache_hit_rate": 0.13333333333333333,
+  "cache_savings_inr_per_1k": 0.26311000000000007,
+  "routing_savings_inr_per_1k": 6.197499333333337,
+  "total_savings_inr_per_1k": 6.460609333333336,
+  "savings_pct": 94.39032474514337,
+  "tier_distribution": {
+    "large": 1,
+    "small": 12,
+    "cache": 2
+  },
+  "direct_baseline_provider_mix": {
+    "groq": 2,
+    "mock": 13
+  },
+  "candidate_provider_mix": {
+    "mock": 6,
+    "groq": 7
+  }
+}
