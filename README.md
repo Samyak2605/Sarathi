@@ -118,7 +118,7 @@ That's it — LOCAL mode runs entirely against a built-in mock provider with
 SQLite storage and in-memory rate limiting. Open `http://localhost:8000/dashboard`
 to watch cost, latency, cache hit rate, and breaker state update live.
 LIVE mode (real Groq/Gemini, Supabase, Upstash, Render) is a `.env` away —
-see `.env.example` and `docs/HUMAN_TASKS.md`.
+see `.env.example`.
 
 Docker: `docker build -t sarathi . && docker run -p 8000:8000 sarathi` (builds
 and boots clean — see [Verification](#what-was-actually-run)).
@@ -143,8 +143,7 @@ successful calls per 30 attempted, even paced at one request per 2.5s.
 The small-tier model (`llama-3.1-8b-instant`) had no such issue (100%
 success across 30 canary probes). Gemini currently can't be validated
 live at all: every model returns `429 RESOURCE_EXHAUSTED ... limit: 0`,
-which looks like a key-provisioning issue, not a code bug (see
-`docs/HUMAN_TASKS.md`). The full-scale 500/1,000-request runs below
+which looks like a key-provisioning issue, not a code bug. The full-scale 500/1,000-request runs below
 remain `provider=mock` until either the rate limit headroom or a paid
 tier makes a larger LIVE run practical.
 
@@ -302,8 +301,8 @@ is the regression test for exactly this.
 
 **Why chaos testing?** Reliability claims without failure injection are
 vibes. `POST /admin/chaos` (admin-token gated) is the same mechanism
-behind the automated benchmark and the manual on-camera demo recipe in
-`docs/HUMAN_TASKS.md`.
+behind both the automated benchmark and the on-camera demo recording
+above.
 
 **Why not just use LiteLLM or Portkey?** Because the internals those
 tools abstract away — tau-sweeps, parity scoring, breaker behavior under
@@ -398,7 +397,9 @@ Not claims — things executed in this environment, with results checked in:
 Said plainly, because a project that only lists its wins isn't finished:
 
 - **The five benchmark tables are still mostly `provider=mock` by design**
-  (see `docs/BLUEPRINT.md` §3, the local-first build). A real client
+  (a local-first build: everything runs against a built-in mock provider
+  with zero credentials, and LIVE mode swaps in behind the same
+  interfaces). A real client
   (SupportMind, see the demo videos above) and a small paced LIVE sample
   against real Groq (tables 1-2) have both been run for real; the
   full-scale 500/1,000-request benchmark runs have not, since Groq's
@@ -416,7 +417,7 @@ Said plainly, because a project that only lists its wins isn't finished:
   because embedding similarity is dominated by template structure over
   the one varying token. Raising tau further trades away real hit rate
   (same chart). A proper fix needs an entity-aware guard, not just a
-  threshold — tracked in `FUTURE.md`.
+  threshold — see Roadmap below.
 - **The router is a hand-weighted heuristic, not a learned classifier**
   (length, code/reasoning-signal regexes, message depth — see
   `gateway/router/classifier.py`). It was calibrated against the
@@ -436,7 +437,7 @@ Said plainly, because a project that only lists its wins isn't finished:
 - **Single-process only.** No multi-instance coordination beyond what
   Supabase/Upstash already provide in LIVE mode; horizontal scaling,
   hedged requests, and multi-region are explicitly out of scope for v1
-  (see `FUTURE.md`).
+  (see Roadmap below).
 - **`SARATHI_DEMO_MODE` is a demo-only knob.** It fills an *unconfigured*
   provider slot with a mock stand-in so failover chains are exercisable
   without credentials; nothing currently stops it from being left on
@@ -455,7 +456,21 @@ that's said directly above, not implied away.
 
 ## Roadmap
 
-See `FUTURE.md` for what's explicitly deferred (entity-aware cache guard,
-hedged requests, multi-region, additional provider adapters, learned
-router classifier) and `docs/HUMAN_TASKS.md` for what's blocked on a
-human action rather than more engineering.
+Explicitly deferred, not forgotten:
+
+- **Entity-aware semantic cache guard** — `results/cache/tau_sweep.json`
+  shows that at the operating threshold (tau=0.90), ~7.5% of "same
+  template, different entity" prompts (e.g. "capital of France" vs.
+  "capital of Japan") still collide, since embedding similarity is
+  dominated by template structure over the one varying entity token. A
+  fix would extract key entities/nouns and require them to match (or
+  differ) as a second guard alongside cosine similarity, rather than
+  just raising tau further (which trades away real hit rate).
+- Hedged requests (fire to two providers, take the first valid response)
+- Multi-region deployment / edge routing
+- Additional provider adapters (OpenAI, Anthropic, Bedrock, Azure)
+- Per-tenant fine-grained RBAC
+- Streaming function/tool-call passthrough beyond basic text SSE
+- Adaptive tau (auto-tuning the cache threshold from live false-hit measurements)
+- A learned router classifier, once there's real traffic to train one
+  against instead of the heuristic in `gateway/router/classifier.py`
