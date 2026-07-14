@@ -14,7 +14,7 @@ chains:
     # Groq primary: it's free and reliable. Gemini is the fallback, not
     # primary, because the free-tier Gemini key in use hits a
     # quota-exceeded (limit: 0) error on every model tried -- looks like
-    # a key-provisioning issue (see docs/HUMAN_TASKS.md), not a code bug.
+    # a key-provisioning issue, not a code bug.
     - provider: groq
       model: llama-3.1-8b-instant
     - provider: gemini

@@ -7,9 +7,9 @@ POST /admin/chaos, and verifies every single request still succeeds
 (failed over to the healthy backup) -- then revives it and watches the
 circuit breaker recover from OPEN through HALF_OPEN back to CLOSED.
 
-This is exactly what docs/HUMAN_TASKS.md's manual chaos-video recipe
-does by hand, against a real running server with the dashboard open in
-a browser -- this script is the automated, evidence-producing version.
+This mirrors the manual chaos-video demo recorded against a real running
+server with the dashboard open in a browser -- this script is the
+automated, evidence-producing version of the same thing.
 
     python -m benchmarks.chaos.run_chaos_test
 """

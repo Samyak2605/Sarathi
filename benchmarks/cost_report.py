@@ -1,14 +1,13 @@
 """Benchmark table #1 (cost): replays 1,000 requests through Sarathi
 (caching + routing) vs a "route everything to the biggest model to be
 safe" baseline, and reports Rs per 1,000 requests with cache savings and
-routing savings broken out separately -- exactly as BLUEPRINT.md section
-5 specifies.
+routing savings broken out separately.
 
 Traffic: synthetic but realistic -- sampled from the same 500-prompt
 labeled dataset used for routing validation, with a "hot" subset repeated
 often (FAQ-like support traffic) and a long tail asked once. This is NOT
 real SupportMind 2.0 traffic; that requires pointing SupportMind at the
-deployed gateway first (docs/HUMAN_TASKS.md). Every number this script
+deployed gateway via base_url (see README). Every number this script
 writes says so explicitly.
 
     python -m benchmarks.cost_report
@@ -136,8 +135,7 @@ async def main() -> None:
             "provider=mock: token counts and pricing tiers are real (see "
             "gateway/metering/pricing.py), but responses are mock-generated, "
             "not real model output. Traffic is synthetic, sampled from the "
-            "500-prompt routing dataset, not real SupportMind 2.0 logs -- "
-            "see docs/HUMAN_TASKS.md for the LIVE benchmark session."
+            "500-prompt routing dataset, not real SupportMind 2.0 logs."
             if provider_mode == "mock"
             else "provider=live: traffic is still synthetic (not real SupportMind 2.0 "
             "logs). Some requests may have failed over to the mock provider if a "

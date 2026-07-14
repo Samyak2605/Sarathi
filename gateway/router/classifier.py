@@ -1,10 +1,11 @@
 """Heuristic complexity classifier.
 
-No labeled training budget for a learned model in v1 -- see FUTURE.md --
-so complexity is a weighted combination of cheap structural signals. This
-is exactly what results/routing/parity.json validates offline before the
-policy is ever allowed to run live traffic (see gateway/router/policy.py
-and CLAUDE.md rule 4).
+No labeled training budget for a learned model in v1 (see the README
+Roadmap for what a learned classifier would need), so complexity is a
+weighted combination of cheap structural signals. This is exactly what
+results/routing/parity.json validates offline before the policy is ever
+allowed to run live traffic (see gateway/router/policy.py) -- no routing
+policy ships without that evidence.
 """
 
 from __future__ import annotations

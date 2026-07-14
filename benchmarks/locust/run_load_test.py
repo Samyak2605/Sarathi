@@ -183,8 +183,7 @@ async def main() -> None:
         "caveat": (
             "provider=mock: this measures gateway/routing/cache/metering "
             "overhead honestly, but request latency is the mock provider's "
-            "simulated latency, not a real model's. See docs/HUMAN_TASKS.md "
-            "for the LIVE benchmark session."
+            "simulated latency, not a real model's."
         ),
         "methodology": (
             f"Locust headless, {DURATION_S} per concurrency level, hitting "

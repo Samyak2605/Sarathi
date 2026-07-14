@@ -1,13 +1,14 @@
-"""Offline routing parity eval -- the evidence CLAUDE.md rule 4 requires
-before policies/routing.yaml's cost-first mode is allowed to run.
+"""Offline routing parity eval -- the evidence required before
+policies/routing.yaml's cost-first mode is allowed to run: never ship a
+routing policy you haven't scored.
 
 For every prompt in routing_dataset.jsonl that the router would route
 *down* from the large tier, this calls both the router's chosen tier and
 the large tier, judges them (canary/judge.py), and reports what fraction
 of routed-down answers matched the large model (win or tie). Every result
-records whether it ran against real providers or the mock (provider
-labeling is CLAUDE.md rule 8) and whether judging used the real LLM judge
-or the heuristic fallback (no Groq/Gemini keys configured).
+records whether it ran against real providers or the mock, and whether
+judging used the real LLM judge or the heuristic fallback (no Groq/Gemini
+keys configured).
 
     python -m benchmarks.replay.routing_eval
 """
@@ -126,9 +127,9 @@ async def main() -> None:
             "count), so candidate and reference text are byte-identical here "
             "and parity_rate=1.0 is an artifact of that, not evidence of real "
             "quality parity. This run validates the harness end-to-end with "
-            "zero credentials; the real parity numbers require the LIVE "
-            "benchmark session (see docs/HUMAN_TASKS.md) against actual "
-            "Groq/Gemini models before this policy's claim can be trusted."
+            "zero credentials; the real parity numbers require a LIVE "
+            "benchmark session against actual Groq/Gemini models before "
+            "this policy's claim can be trusted."
         )
 
     summary = {

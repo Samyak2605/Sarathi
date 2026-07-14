@@ -1,5 +1,5 @@
 """Generates the 500-prompt labeled routing dataset used to validate the
-router offline before its policy is allowed to run (CLAUDE.md rule 4).
+router offline before its policy is allowed to run on real traffic.
 
 Deterministic template x topic combinations (no randomness -- re-running
 this script reproduces the exact same file), each labeled with the tier a

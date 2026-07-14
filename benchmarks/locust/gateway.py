@@ -7,10 +7,10 @@ Headless (used by benchmarks/locust/run_load_and_chaos.py):
     locust -f benchmarks/locust/gateway.py --headless -u 50 -r 50 -t 15s \
         --host http://127.0.0.1:8000 --csv results/load/tmp
 
-Deliberately uses temperature=0.7 (non-cacheable, per CLAUDE.md rule 2:
-never cache above 0.3) so this measures the real per-request compute
-path -- router + provider round trip -- rather than an artificially
-inflated number from cache hits.
+Deliberately uses temperature=0.7 (non-cacheable -- the gateway never
+caches above temperature 0.3) so this measures the real per-request
+compute path -- router + provider round trip -- rather than an
+artificially inflated number from cache hits.
 """
 
 from __future__ import annotations

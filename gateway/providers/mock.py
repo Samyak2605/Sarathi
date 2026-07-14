@@ -120,10 +120,10 @@ class NamedMockProvider(MockProvider):
 
     Used to (a) simulate multi-provider failover chains in tests without
     real Groq/Gemini credentials, and (b) back SARATHI_DEMO_MODE, which
-    registers one of these under "groq" so the chaos benchmark and the
-    manual demo recipe (docs/HUMAN_TASKS.md) can show a real kill ->
-    failover -> zero-dropped-requests sequence with zero credentials.
-    Always clearly labeled -- never mistaken for real provider traffic.
+    registers one of these under "groq" so the chaos benchmark and demo
+    recording can show a real kill -> failover -> zero-dropped-requests
+    sequence with zero credentials. Always clearly labeled -- never
+    mistaken for real provider traffic.
     """
 
     def __init__(self, name: str, chaos: ChaosConfig | None = None, base_latency_ms: float = 30.0):

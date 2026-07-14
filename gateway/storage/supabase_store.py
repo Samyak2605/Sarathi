@@ -2,8 +2,7 @@
 
 Same Storage interface as SQLiteStorage. Requires SUPABASE_URL and
 SUPABASE_SERVICE_KEY in .env. Run docs/supabase_schema.sql once against
-the project (Supabase SQL editor) before first use -- see
-docs/HUMAN_TASKS.md.
+the project (Supabase SQL editor) before first use.
 """
 
 from __future__ import annotations

@@ -28,8 +28,8 @@ class Settings(BaseSettings):
     # registers mock-backed stand-ins under the "groq"/"gemini" provider
     # slots so the full multi-provider failover chain is exercisable with
     # zero credentials -- this is what benchmarks/chaos/run_chaos_test.py
-    # and the manual chaos-demo recipe in docs/HUMAN_TASKS.md use. Never
-    # enabled by default; has no effect in LIVE mode with real keys set.
+    # and the manual chaos-demo recording use. Never enabled by default;
+    # has no effect in LIVE mode with real keys set.
     sarathi_demo_mode: bool = False
 
     sqlite_path: str = str(REPO_ROOT / "data" / "sarathi.db")

@@ -12,8 +12,9 @@ Two parts:
    the real CacheManager, and for every semantic hit, judge the cached
    answer against a freshly generated answer for the new query
    (canary/judge.py). A "loss" verdict is a genuine false hit -- the
-   cache returned a wrong answer. This is the honesty metric CLAUDE.md
-   requires published next to the raw hit rate.
+   cache returned a wrong answer. This is the honesty metric this
+   project publishes next to the raw hit rate, on principle: a cache
+   that returns wrong answers is worse than no cache.
 
     python -m benchmarks.tau_sweep
 """
