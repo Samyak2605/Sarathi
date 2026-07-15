@@ -1,6 +1,6 @@
 {
   "provider": "mock",
-  "caveat": "provider=mock: token counts and pricing tiers are real (see gateway/metering/pricing.py), but responses are mock-generated, not real model output. Traffic is synthetic, sampled from the 500-prompt routing dataset, not real SupportMind 2.0 logs -- see docs/HUMAN_TASKS.md for the LIVE benchmark session.",
+  "caveat": "provider=mock: token counts and pricing tiers are real (see gateway/metering/pricing.py), but responses are mock-generated, not real model output. Traffic is synthetic, sampled from the 500-prompt routing dataset, not real SupportMind 2.0 logs.",
   "methodology": "1000 synthetic support-style requests (45% drawn from a 40-prompt 'hot' FAQ-like subset, the rest from the full 500-prompt labeled dataset), replayed once against an always-large direct baseline and once through Sarathi's cache + cost-first router.",
   "traffic_size": 1000,
   "direct_cost_inr_per_1k": 2.037181879999991,
@@ -15,5 +15,11 @@
     "small": 56,
     "cache": 925,
     "mid": 6
+  },
+  "direct_baseline_provider_mix": {
+    "mock": 1000
+  },
+  "candidate_provider_mix": {
+    "mock": 75
   }
 }

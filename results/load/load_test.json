@@ -1,61 +1,61 @@
 {
   "provider": "mock",
-  "caveat": "provider=mock: this measures gateway/routing/cache/metering overhead honestly, but request latency is the mock provider's simulated latency, not a real model's. See docs/HUMAN_TASKS.md for the LIVE benchmark session.",
+  "caveat": "provider=mock: this measures gateway/routing/cache/metering overhead honestly, but request latency is the mock provider's simulated latency, not a real model's.",
   "methodology": "Locust headless, 12s per concurrency level, hitting /v1/chat/completions with temperature=0.7 (non-cacheable) prompts so this measures the real per-request compute path, not cache hits.",
   "results": [
     {
       "concurrency": 10,
       "gateway": {
         "users": 10,
-        "requests": 530,
+        "requests": 525,
         "failures": 0,
-        "rps": 48.10004340075864,
+        "rps": 47.72539422044095,
         "p50_ms": 36.0,
         "p95_ms": 40.0,
-        "p99_ms": 42.0
+        "p99_ms": 45.0
       },
       "direct_provider_call": {
-        "p50_ms": 31.174749994534068,
-        "p95_ms": 31.684208996011876,
-        "p99_ms": 31.879834001301788
+        "p50_ms": 31.296542001655325,
+        "p95_ms": 31.640208995668218,
+        "p99_ms": 31.793000001925975
       },
-      "gateway_overhead_p50_ms": 4.825250005465932
+      "gateway_overhead_p50_ms": 4.703457998344675
     },
     {
       "concurrency": 50,
       "gateway": {
         "users": 50,
-        "requests": 2669,
+        "requests": 2653,
         "failures": 0,
-        "rps": 242.54342010525224,
+        "rps": 241.1279349541799,
         "p50_ms": 33.0,
-        "p95_ms": 36.0,
-        "p99_ms": 53.0
+        "p95_ms": 35.0,
+        "p99_ms": 51.0
       },
       "direct_provider_call": {
-        "p50_ms": 30.48566699726507,
-        "p95_ms": 30.743833995074965,
-        "p99_ms": 30.801833010627888
+        "p50_ms": 30.129332997603342,
+        "p95_ms": 30.62550000322517,
+        "p99_ms": 30.679874995257705
       },
-      "gateway_overhead_p50_ms": 2.5143330027349293
+      "gateway_overhead_p50_ms": 2.870667002396658
     },
     {
       "concurrency": 100,
       "gateway": {
         "users": 100,
-        "requests": 5305,
+        "requests": 5281,
         "failures": 0,
-        "rps": 482.1909779238848,
+        "rps": 479.9413114894405,
         "p50_ms": 33.0,
         "p95_ms": 37.0,
-        "p99_ms": 92.0
+        "p99_ms": 91.0
       },
       "direct_provider_call": {
-        "p50_ms": 30.825292007648386,
-        "p95_ms": 31.462291997740977,
-        "p99_ms": 31.535916990833357
+        "p50_ms": 31.433708005351946,
+        "p95_ms": 31.951625001966022,
+        "p99_ms": 32.03274999395944
       },
-      "gateway_overhead_p50_ms": 2.174707992351614
+      "gateway_overhead_p50_ms": 1.5662919946480542
     }
   ]
 }

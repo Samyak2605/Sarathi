@@ -1,6 +1,6 @@
 {
   "provider": "mock",
-  "caveat": "provider=mock: the mock provider returns the same canned reply regardless of which tier/model is asked (it only echoes word count), so candidate and reference text are byte-identical here and parity_rate=1.0 is an artifact of that, not evidence of real quality parity. This run validates the harness end-to-end with zero credentials; the real parity numbers require the LIVE benchmark session (see docs/HUMAN_TASKS.md) against actual Groq/Gemini models before this policy's claim can be trusted.",
+  "caveat": "provider=mock: the mock provider returns the same canned reply regardless of which tier/model is asked (it only echoes word count), so candidate and reference text are byte-identical here and parity_rate=1.0 is an artifact of that, not evidence of real quality parity. This run validates the harness end-to-end with zero credentials; the real parity numbers require a LIVE benchmark session against actual Groq/Gemini models before this policy's claim can be trusted.",
   "methodology": "Router.decide() run over a 500-prompt labeled dataset (benchmarks/replay/routing_dataset.jsonl). For every prompt routed below the large tier, both the routed tier and the large tier were called and judged by canary/judge.py (LLM judge via the large-tier chain, or a heuristic embedding-similarity fallback where noted).",
   "dataset_size": 500,
   "router_tier_accuracy": 0.892,
